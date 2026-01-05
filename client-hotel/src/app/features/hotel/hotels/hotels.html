@@ -1,0 +1,74 @@
+<div class="hotels-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Hotels</mat-card-title>
+      <div class="spacer"></div>
+      <button *ngIf="hasRole('Admin')" mat-raised-button color="primary" routerLink="/admin/hotels/new">
+        <mat-icon>add</mat-icon>
+        Add New Hotel
+      </button>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- Search & Toolkit -->
+      <div class="toolbar-row">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search Hotels</mat-label>
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput [(ngModel)]="searchText" (keyup)="applyFilter()" placeholder="By Name or City">
+          <button *ngIf="searchText" matSuffix mat-icon-button (click)="searchText=''; applyFilter()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="loading" class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Loading hotels...</p>
+      </div>
+
+      <!-- Hotel Cards Grid -->
+      <div *ngIf="!loading && filteredHotels.length > 0" class="hotel-grid">
+        <mat-card *ngFor="let hotel of filteredHotels" class="hotel-card">
+          <div class="card-header-image">
+            <mat-icon class="hotel-icon">apartment</mat-icon>
+          </div>
+          <mat-card-header>
+            <mat-card-title>{{ hotel.name }}</mat-card-title>
+            <mat-card-subtitle><mat-icon inline>location_on</mat-icon> {{ hotel.city }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content class="card-body">
+            <p *ngIf="hotel.phone"><mat-icon inline>phone</mat-icon> {{ hotel.phone }}</p>
+            <p *ngIf="hotel.email"><mat-icon inline>email</mat-icon> {{ hotel.email }}</p>
+            <p class="rooms-badge">{{ hotel.totalRooms }} Rooms</p>
+            <!-- <div class="rating">
+                <mat-icon class="star">star</mat-icon> 4.5
+            </div> -->
+          </mat-card-content>
+
+          <mat-card-actions align="end">
+            <button mat-button color="primary" [routerLink]="['/dashboard/hotels', hotel.id, 'rooms']">
+              View Rooms
+            </button>
+
+            <button *ngIf="hasRole('Guest') || hasRole('Receptionist') || hasRole('HotelManager') || hasRole('Admin')"
+              mat-raised-button color="accent" [routerLink]="['/dashboard/hotels', hotel.id, 'book']">
+              {{ hasRole('Guest') ? 'Book Now' : 'Book / Walk-In' }}
+            </button>
+
+            <button *ngIf="hasRole('Admin')" mat-icon-button [routerLink]="['/admin/hotels', hotel.id, 'edit']"
+              matTooltip="Edit Hotel">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div *ngIf="!loading && filteredHotels.length === 0" class="no-data">
+        <mat-icon>search_off</mat-icon>
+        <p>No hotels found matching your search.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

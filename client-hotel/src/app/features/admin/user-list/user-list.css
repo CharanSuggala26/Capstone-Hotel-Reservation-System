@@ -1,0 +1,101 @@
+.user-list-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2rem auto;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+mat-card-header {
+  background: linear-gradient(135deg, #1976d2 0%, #1e88e5 100%);
+  color: white;
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 0;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+mat-card-content {
+  padding: 0 !important;
+}
+
+/* Filter Section */
+.filter-controls {
+  padding: 1.5rem;
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-controls mat-form-field {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Table Styling */
+table.mat-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: none !important;
+  /* Remove individual table shadow */
+}
+
+.mat-header-cell {
+  background-color: #f5f7fa;
+  color: #546e7a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mat-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mat-row:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.mat-row:last-child .mat-cell {
+  border-bottom: none;
+}
+
+/* Actions Column */
+.mat-column-actions {
+  width: 120px;
+  text-align: right;
+  padding-right: 1.5rem !important;
+}
+
+.mat-column-actions button {
+  margin-left: 8px;
+}
+
+/* Paginator */
+mat-paginator {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-list-container {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,64 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h2>Administrative Reports</h2>
+    <div *ngIf="loading" class="spinner">Loading metrics...</div>
+  </div>
+
+  <div class="stats-row" *ngIf="!loading">
+    <div class="card stat-card purple">
+      <div class="card-info">
+        <span class="label">Total Hotels</span>
+        <span class="value">{{ stats.totalHotels }}</span>
+      </div>
+      <i class="icon">🏢</i>
+    </div>
+
+    <div class="card stat-card blue">
+      <div class="card-info">
+        <span class="label">Total Revenue</span>
+        <span class="value">${{ stats.totalRevenue | number:'1.0-0' }}</span>
+      </div>
+      <i class="icon">💰</i>
+    </div>
+
+    <div class="card stat-card green">
+      <div class="card-info">
+        <span class="label">Occupancy Rate</span>
+        <span class="value">{{ stats.occupancyRate }}%</span>
+      </div>
+      <i class="icon">📈</i>
+    </div>
+
+    <div class="card stat-card cyan">
+      <div class="card-info">
+        <span class="label">Active Guests</span>
+        <span class="value">{{ stats.activeReservations }}</span>
+      </div>
+      <i class="icon">🔑</i>
+    </div>
+
+    <div class="card stat-card yellow">
+      <div class="card-info">
+        <span class="label">Total Users</span>
+        <span class="value">{{ stats.totalUsers }}</span>
+      </div>
+      <i class="icon">👥</i>
+    </div>
+  </div>
+
+  <div class="charts-row" *ngIf="!loading">
+    <div class="card chart-card flex-2">
+      <div class="card-header">Revenue Trend (6 Months)</div>
+      <div class="chart-box">
+        <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="'line'"></canvas>
+      </div>
+    </div>
+
+    <div class="card chart-card flex-1">
+      <div class="card-header">Reservation Distribution</div>
+      <div class="chart-box">
+        <canvas baseChart [data]="doughnutChartData" [options]="doughnutChartOptions" [type]="'doughnut'"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

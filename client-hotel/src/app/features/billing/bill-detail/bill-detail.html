@@ -1,0 +1,42 @@
+<div class="bill-detail-container">
+  <mat-card *ngIf="!loading && bill">
+    <mat-card-header>
+      <mat-card-title>Bill #{{ bill.id }}</mat-card-title>
+      <mat-card-subtitle>{{ bill.userName }} — Room {{ bill.roomNumber }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p><strong>Room Charges:</strong> ${{ bill.roomCharges }}</p>
+      <p><strong>Additional Charges:</strong> ${{ bill.additionalCharges }}</p>
+      <p><strong>Tax:</strong> ${{ bill.taxAmount }}</p>
+      <p class="total"><strong>Total:</strong> ${{ bill.totalAmount }}</p>
+
+      <mat-chip [class.status-paid]="bill!.paymentStatus === PaymentStatus.Paid"
+        [class.status-pending]="bill!.paymentStatus === PaymentStatus.Pending"
+        [class.status-refunded]="bill!.paymentStatus === PaymentStatus.Refunded" selected>
+        {{ getText(bill!.paymentStatus) }}
+      </mat-chip>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <!-- "Pay" button hidden for Staff (Admin/Receptionist/HotelManager) -->
+      <button mat-raised-button color="primary" (click)="pay()"
+        *ngIf="bill.paymentStatus === PaymentStatus.Pending && !hasRole('Admin') && !hasRole('Receptionist') && !hasRole('HotelManager')">
+        <mat-icon>payment</mat-icon>
+        Pay
+      </button>
+      <button mat-raised-button color="warn" (click)="cancel()" *ngIf="bill.paymentStatus === PaymentStatus.Pending">
+        Cancel
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+    <p>Loading bill...</p>
+  </div>
+
+  <div *ngIf="!loading && !bill" class="no-data">
+    <p>Bill not found.</p>
+  </div>
+</div>

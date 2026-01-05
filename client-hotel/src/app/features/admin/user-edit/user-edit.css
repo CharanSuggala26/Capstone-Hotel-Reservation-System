@@ -1,0 +1,16 @@
+.user-edit-container {
+    padding: 20px;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}

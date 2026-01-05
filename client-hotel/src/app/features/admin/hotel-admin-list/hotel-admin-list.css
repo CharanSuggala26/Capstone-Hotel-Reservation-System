@@ -1,0 +1,92 @@
+.hotel-list-container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 2rem auto;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+mat-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+mat-card-header {
+    background: linear-gradient(135deg, #1976d2 0%, #0277bd 100%);
+    color: white;
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 0 !important;
+}
+
+/* Header Actions (Add Button) within the card header?
+   Typically mat-card-title is text. We can put specific buttons in an absolute position or flex row. 
+   But the HTML structure needs to change to put the button inside the header or nearby.
+   The current HTML has a separate button. We will move it. */
+
+.header-actions {
+    display: flex;
+    margin-left: auto;
+    /* Push to right */
+}
+
+mat-card-content {
+    padding: 0 !important;
+}
+
+/* Table Styling */
+table.mat-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: none !important;
+}
+
+.mat-header-cell {
+    background-color: #f5f7fa;
+    color: #546e7a;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mat-cell {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mat-row:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+
+.mat-row:last-child .mat-cell {
+    border-bottom: none;
+}
+
+/* Actions */
+.mat-column-actions {
+    width: 150px;
+    text-align: right;
+    padding-right: 1.5rem !important;
+    white-space: nowrap;
+}
+
+.mat-column-actions button {
+    margin: 0 2px;
+}

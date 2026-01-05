@@ -1,0 +1,169 @@
+.reservations-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2rem auto;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+mat-card-header {
+  background: linear-gradient(135deg, #009688 0%, #4db6ac 100%);
+  color: white;
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 0;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+mat-card-content {
+  padding: 0 !important;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.loading-container mat-spinner {
+  margin-bottom: 1.5rem;
+}
+
+/* Table Styling */
+.reservations-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.reservations-table th.mat-mdc-header-cell {
+  background-color: #f5f7fa;
+  color: #546e7a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reservations-table td.mat-mdc-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reservations-table tr.mat-mdc-row:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.reservations-table tr.mat-mdc-row:last-child td {
+  border-bottom: none;
+}
+
+/* Chips */
+.mat-mdc-chip {
+  min-height: 24px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+
+/* Status Colors */
+.status-booked {
+  background-color: #e3f2fd !important;
+  color: #1565c0 !important;
+  /* Blue */
+  border: 1px solid #bbdefb !important;
+}
+
+.status-confirmed {
+  background-color: #e8f5e9 !important;
+  color: #2e7d32 !important;
+  /* Green */
+  border: 1px solid #c8e6c9 !important;
+}
+
+.status-checkedin {
+  background-color: #f3e5f5 !important;
+  color: #7b1fa2 !important;
+  /* Purple */
+  border: 1px solid #e1bee7 !important;
+}
+
+.status-checkedout {
+  background-color: #fff3e0 !important;
+  color: #e65100 !important;
+  /* Orange */
+  border: 1px solid #ffe0b2 !important;
+}
+
+.status-cancelled {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+  /* Red */
+  border: 1px solid #ffcdd2 !important;
+}
+
+/* Buttons */
+.mat-column-actions {
+  min-width: 150px;
+  text-align: right;
+}
+
+mat-cell button {
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 24px;
+  padding: 0 12px;
+}
+
+mat-cell button:last-child {
+  margin-right: 0;
+}
+
+/* No Data State */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #90a4ae;
+  background-color: #fff;
+}
+
+.no-data mat-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-data p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+mat-paginator {
+  border-top: 1px solid #e0e0e0;
+}

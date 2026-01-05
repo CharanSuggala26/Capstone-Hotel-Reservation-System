@@ -1,0 +1,127 @@
+<div class="booking-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Book a Room</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="bookingForm">
+
+        <!-- SEARCH SECTION -->
+        <div class="search-section">
+          <h3>Search Available Rooms</h3>
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Check-in Date</mat-label>
+              <input matInput [matDatepicker]="checkInPicker" formControlName="checkInDate">
+              <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+              <mat-datepicker #checkInPicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Check-out Date</mat-label>
+              <input matInput [matDatepicker]="checkOutPicker" formControlName="checkOutDate">
+              <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+              <mat-datepicker #checkOutPicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Guests</mat-label>
+              <input matInput type="number" formControlName="numberOfGuests">
+            </mat-form-field>
+
+            <!-- STAFF ONLY: Walk-in / Guest Email -->
+            <mat-form-field appearance="outline" *ngIf="isStaff" class="guest-email-field">
+              <mat-label>Guest Email (Walk-in)</mat-label>
+              <input matInput formControlName="guestEmail" placeholder="user@example.com">
+              <mat-hint>Leave empty for self</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="search-actions">
+            <button mat-raised-button color="primary" type="button" (click)="searchRooms()"
+              [disabled]="isSearchDisabled() || loading">
+              <mat-icon>search</mat-icon>
+              Search Rooms
+            </button>
+
+            <!-- New Guest Registration Trigger (Staff) -->
+            <button *ngIf="isStaff" mat-stroked-button color="accent" type="button" (click)="toggleRegisterGuest()">
+              <mat-icon>person_add</mat-icon>
+              {{ showRegisterGuest ? 'Cancel Registration' : 'Register New Guest' }}
+            </button>
+          </div>
+
+          <!-- Quick Guest Registration Form -->
+          <div *ngIf="showRegisterGuest" class="guest-registration-panel">
+            <h4>Quick Guest Registration</h4>
+            <div [formGroup]="guestForm" class="guest-form-grid">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="phoneNumber">
+              </mat-form-field>
+
+              <button mat-raised-button color="accent" type="button" (click)="registerGuest()"
+                [disabled]="guestForm.invalid || loading">
+                Create Account & Use Email
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOADING -->
+        <div *ngIf="loading" class="loading-container">
+          <mat-spinner></mat-spinner>
+          <p>Searching available rooms...</p>
+        </div>
+
+        <!-- AVAILABLE ROOMS -->
+        <div *ngIf="!loading && availableRooms.length > 0" class="rooms-section">
+          <h3>Available Rooms</h3>
+          <mat-radio-group formControlName="selectedRoomId" class="rooms-grid">
+            <mat-card *ngFor="let room of availableRooms" class="room-card">
+              <mat-card-content>
+                <div class="room-header">
+                  <h4>Room {{ room.roomNumber }}</h4>
+                  <mat-chip color="primary" selected>{{ getRoomTypeText(room.type) }}</mat-chip>
+                </div>
+                <p><mat-icon>people</mat-icon> Capacity: {{ room.capacity }}</p>
+                <p><mat-icon>attach_money</mat-icon> {{ room.basePrice }}/night</p>
+                <mat-radio-button [value]="room.id">Select this room</mat-radio-button>
+              </mat-card-content>
+            </mat-card>
+          </mat-radio-group>
+
+          <div class="booking-actions">
+            <button mat-raised-button color="accent" (click)="bookRoom()" [disabled]="bookingForm.invalid || loading">
+              <mat-icon>book_online</mat-icon>
+              Book Selected Room
+            </button>
+          </div>
+        </div>
+
+        <!-- NO ROOMS -->
+        <div *ngIf="!loading && availableRooms.length === 0 && bookingForm.value.checkInDate">
+          <mat-icon>hotel</mat-icon>
+          <p>No rooms available for selected dates.</p>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

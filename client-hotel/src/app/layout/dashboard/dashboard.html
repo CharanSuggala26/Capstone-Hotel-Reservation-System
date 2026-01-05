@@ -1,0 +1,132 @@
+<div class="dashboard-container">
+  <mat-toolbar color="primary" class="dashboard-toolbar">
+    <span>Hotel Management System</span>
+    <span class="spacer"></span>
+    <span *ngIf="currentUser">Welcome, {{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+
+    <button mat-icon-button [matMenuTriggerFor]="notificationMenu" aria-label="Notifications">
+      <mat-icon [matBadge]="unreadCount" [matBadgeHidden]="unreadCount === 0" matBadgeColor="warn"
+        aria-hidden="false">notifications</mat-icon>
+    </button>
+    <mat-menu #notificationMenu="matMenu" class="notification-menu">
+      <div class="notification-header" (click)="$event.stopPropagation()">
+        <h3>Notifications</h3>
+      </div>
+      <mat-divider></mat-divider>
+      <div *ngIf="notifications.length === 0" class="no-notifications">
+        No notifications
+      </div>
+      <button mat-menu-item *ngFor="let notification of notifications" [class.unread]="!notification.isRead"
+        (click)="markAsRead(notification)">
+        <mat-icon *ngIf="notification.type === 0">check_circle</mat-icon>
+        <mat-icon *ngIf="notification.type === 1">login</mat-icon>
+        <mat-icon *ngIf="notification.type === 2">logout</mat-icon>
+        <mat-icon *ngIf="notification.type === 3">how_to_reg</mat-icon>
+        <mat-icon *ngIf="notification.type === 4">credit_score</mat-icon>
+        <mat-icon *ngIf="notification.type === 5">remove_circle</mat-icon>
+        <div class="notification-content">
+          <p>{{notification.message}}</p>
+          <small>{{notification.createdAt | date:'medium'}}</small>
+        </div>
+      </button>
+    </mat-menu>
+
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <div *ngIf="hasRole('Guest')">
+          <h3 mat-subheader>Guest Services</h3>
+          <a mat-list-item routerLink="/dashboard/hotels" routerLinkActive="active">
+            <mat-icon matListItemIcon>hotel</mat-icon>
+            <span matListItemTitle>Browse Hotels</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/reservations" routerLinkActive="active">
+            <mat-icon matListItemIcon>event</mat-icon>
+            <span matListItemTitle>My Reservations</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/bills" routerLinkActive="active">
+            <mat-icon matListItemIcon>receipt</mat-icon>
+            <span matListItemTitle>My Bills</span>
+          </a>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div *ngIf="hasRole('Receptionist')">
+          <h3 mat-subheader>Front Desk</h3>
+          <a mat-list-item routerLink="/dashboard/reservations" routerLinkActive="active">
+            <mat-icon matListItemIcon>event_available</mat-icon>
+            <span matListItemTitle>Reservations (Check-in/out)</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/hotels" routerLinkActive="active">
+            <mat-icon matListItemIcon>add_box</mat-icon>
+            <span matListItemTitle>New Walk-In Reservation</span>
+          </a>
+          <!-- Guests management not yet implemented -->
+          <mat-divider></mat-divider>
+        </div>
+
+        <div *ngIf="hasRole('HotelManager')">
+          <h3 mat-subheader>Hotel Management</h3>
+          <a mat-list-item routerLink="/dashboard/hotels" routerLinkActive="active">
+            <mat-icon matListItemIcon>business</mat-icon>
+            <span matListItemTitle>Manage Hotels</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/rooms" routerLinkActive="active">
+            <mat-icon matListItemIcon>meeting_room</mat-icon>
+            <span matListItemTitle>Manage Rooms</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/reservations" routerLinkActive="active">
+            <mat-icon matListItemIcon>fact_check</mat-icon>
+            <span matListItemTitle>Manage Reservations</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/seasonal-rates" routerLinkActive="active">
+            <mat-icon matListItemIcon>price_change</mat-icon>
+            <span matListItemTitle>Seasonal Rates</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/reports" routerLinkActive="active">
+            <mat-icon matListItemIcon>assessment</mat-icon>
+            <span matListItemTitle>Reports</span>
+          </a>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div *ngIf="hasRole('Admin')">
+          <h3 mat-subheader>Administration</h3>
+          <a mat-list-item routerLink="/dashboard/admin/users" routerLinkActive="active">
+            <mat-icon matListItemIcon>manage_accounts</mat-icon>
+            <span matListItemTitle>User Management</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/hotels" routerLinkActive="active">
+            <mat-icon matListItemIcon>admin_panel_settings</mat-icon>
+            <span matListItemTitle>Hotel Administration</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/seasonal-rates" routerLinkActive="active">
+            <mat-icon matListItemIcon>price_change</mat-icon>
+            <span matListItemTitle>Seasonal Rates</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/rooms" routerLinkActive="active">
+            <mat-icon matListItemIcon>meeting_room</mat-icon>
+            <span matListItemTitle>Manage Rooms</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/reports" routerLinkActive="active">
+            <mat-icon matListItemIcon>assessment</mat-icon>
+            <span matListItemTitle>System Reports</span>
+          </a>
+          <a mat-list-item routerLink="/dashboard/admin/assign" routerLinkActive="active">
+            <mat-icon matListItemIcon>add_business</mat-icon>
+            <span matListItemTitle>Assign Hotels</span>
+          </a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,173 @@
+/* Existing CSS content */
+.bills-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2rem auto;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+mat-card-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%);
+  color: white;
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 0;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+mat-card-content {
+  padding: 0 !important;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #666;
+}
+
+.loading-container mat-spinner {
+  margin-bottom: 1.5rem;
+}
+
+/* Table Styling */
+.bills-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.bills-table th.mat-mdc-header-cell {
+  background-color: #f5f7fa;
+  color: #546e7a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bills-table td.mat-mdc-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bills-table tr.mat-mdc-row:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.bills-table tr.mat-mdc-row:last-child td {
+  border-bottom: none;
+}
+
+/* Specific Columns */
+.mat-column-id {
+  font-weight: 500;
+  color: #3f51b5;
+  width: 80px;
+}
+
+.mat-column-totalAmount {
+  font-weight: 700;
+  color: #2e7d32;
+  /* Green shade for money */
+}
+
+/* Chips */
+.mat-mdc-chip {
+  min-height: 24px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+
+/* Custom Status Colors */
+.status-paid {
+  background-color: #e8f5e9 !important;
+  color: #2e7d32 !important;
+  /* Green text */
+  border: 1px solid #c8e6c9 !important;
+}
+
+.status-pending {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+  /* Red text */
+  border: 1px solid #ffcdd2 !important;
+}
+
+.status-refunded {
+  background-color: #fff3e0 !important;
+  color: #ef6c00 !important;
+  /* Orange text */
+  border: 1px solid #ffe0b2 !important;
+}
+
+
+/* Buttons */
+.mat-column-actions {
+  width: 140px;
+  text-align: right;
+}
+
+button[mat-raised-button] {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* No Data State */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #90a4ae;
+  background-color: #fff;
+}
+
+.no-data mat-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-data p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.no-data .hint {
+  font-size: 0.9rem;
+  color: #b0bec5;
+  max-width: 400px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+mat-paginator {
+  border-top: 1px solid #e0e0e0;
+}

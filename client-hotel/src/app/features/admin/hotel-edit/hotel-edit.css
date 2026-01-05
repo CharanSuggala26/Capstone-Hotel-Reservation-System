@@ -1,0 +1,22 @@
+.hotel-edit-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}

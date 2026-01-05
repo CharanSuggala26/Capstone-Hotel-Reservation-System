@@ -1,0 +1,98 @@
+<div class="seasonal-rates-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Manage Seasonal Rates</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <!-- Hotel Selector -->
+            <mat-form-field appearance="outline" class="hotel-select">
+                <mat-label>Select Hotel</mat-label>
+                <mat-select [formControl]="hotelControl" (selectionChange)="onHotelChange()">
+                    <mat-option *ngFor="let h of hotels" [value]="h.id">{{ h.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div *ngIf="selectedHotelId; else noHotel">
+                <!-- Add Rate Form -->
+                <div class="rate-form" [formGroup]="rateForm">
+                    <h3>Add New Rate</h3>
+                    <div class="form-row">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Rate Name</mat-label>
+                            <input matInput formControlName="name" placeholder="e.g. Summer Sale">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Multiplier</mat-label>
+                            <input matInput type="number" formControlName="multiplier" placeholder="1.2">
+                            <mat-hint>1.0 = Regular, >1.0 = Markup, <1.0=Discount</mat-hint>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-row">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Start Date</mat-label>
+                            <input matInput [matDatepicker]="pickerStart" formControlName="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerStart></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>End Date</mat-label>
+                            <input matInput [matDatepicker]="pickerEnd" formControlName="endDate">
+                            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerEnd></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <button mat-raised-button color="primary" (click)="addRate()"
+                        [disabled]="rateForm.invalid || loading">
+                        Add Rate
+                    </button>
+                </div>
+
+                <!-- Rates List -->
+                <h3>Current Rates</h3>
+                <mat-table [dataSource]="rates" class="rates-table" *ngIf="rates.length > 0; else noRates">
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+                        <mat-cell *matCellDef="let r">{{r.name}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="multiplier">
+                        <mat-header-cell *matHeaderCellDef>Multiplier</mat-header-cell>
+                        <mat-cell *matCellDef="let r">{{r.multiplier}}x</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="dates">
+                        <mat-header-cell *matHeaderCellDef>Dates</mat-header-cell>
+                        <mat-cell *matCellDef="let r">
+                            {{r.startDate | date:'shortDate'}} - {{r.endDate | date:'shortDate'}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+                        <mat-cell *matCellDef="let r">
+                            <button mat-icon-button color="warn" (click)="deleteRate(r.id)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+
+                <ng-template #noRates>
+                    <p class="no-data">No seasonal rates defined for this hotel.</p>
+                </ng-template>
+            </div>
+
+            <ng-template #noHotel>
+                <p class="hint">Please select a hotel to manage its rates.</p>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</div>

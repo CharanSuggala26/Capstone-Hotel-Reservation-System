@@ -1,0 +1,115 @@
+<div class="reservations-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>My Reservations</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="loading" class="loading-container">
+        <mat-spinner></mat-spinner>
+        <p>Loading reservations...</p>
+      </div>
+
+      <div *ngIf="!loading">
+        <table mat-table [dataSource]="dataSource" matSort class="reservations-table">
+          <ng-container matColumnDef="hotelName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Hotel</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.hotelName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="roomNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Room</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.roomNumber }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="userName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Guest Name</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.userName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="checkInDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Check-in</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.checkInDate | date:'mediumDate' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="checkOutDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Check-out</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.checkOutDate | date:'mediumDate' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="numberOfGuests">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Guests</th>
+            <td mat-cell *matCellDef="let reservation">{{ reservation.numberOfGuests }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="totalAmount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+            <td mat-cell *matCellDef="let reservation">${{ reservation.totalAmount }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let reservation">
+              <mat-chip [class.status-booked]="reservation.status === 1"
+                [class.status-confirmed]="reservation.status === 2" [class.status-checkedin]="reservation.status === 3"
+                [class.status-checkedout]="reservation.status === 4" [class.status-cancelled]="reservation.status === 5"
+                selected>
+                {{ getStatusText(reservation.status) }}
+              </mat-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let reservation">
+              <!-- Hotel Manager: Confirm Booking -->
+              <button *ngIf="canConfirm(reservation)" mat-raised-button color="primary"
+                (click)="confirmReservation(reservation.id)">
+                <mat-icon>check_circle</mat-icon>
+                Confirm
+              </button>
+
+              <!-- Cancel Booking (Manager & Guest) -->
+              <button *ngIf="canCancel(reservation)" mat-raised-button color="warn"
+                (click)="cancelReservation(reservation.id)" style="margin-left: 8px;">
+                <mat-icon>cancel</mat-icon>
+                Cancel
+              </button>
+
+              <!-- Receptionist: Check In -->
+              <button *ngIf="canCheckIn(reservation)" mat-raised-button color="primary"
+                (click)="checkIn(reservation.id)">
+                <mat-icon>login</mat-icon>
+                Check In
+              </button>
+
+              <!-- Receptionist: Check Out -->
+              <button *ngIf="canCheckOut(reservation)" mat-raised-button color="accent"
+                (click)="checkOut(reservation.id)">
+                <mat-icon>logout</mat-icon>
+                Check Out
+              </button>
+
+              <!-- Receptionist & Admin: Generate Bill -->
+              <button *ngIf="canGenerateBill(reservation)" mat-raised-button color="warn"
+                (click)="generateBill(reservation)">
+                <mat-icon>receipt</mat-icon>
+                Generate Bill
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+
+      <div *ngIf="!loading && dataSource.data.length === 0" class="no-data">
+        <mat-icon>event_busy</mat-icon>
+        <p>No reservations found.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

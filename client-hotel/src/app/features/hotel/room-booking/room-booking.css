@@ -1,0 +1,160 @@
+.booking-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.search-section h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loading-container mat-spinner {
+  margin-bottom: 1rem;
+}
+
+.rooms-section {
+  margin-top: 2rem;
+}
+
+.rooms-section h3 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.room-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.room-header h4 {
+  margin: 0;
+  color: #333;
+}
+
+.room-details {
+  margin-bottom: 1rem;
+}
+
+.room-details p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.room-details mat-icon {
+  margin-right: 0.5rem;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.room-price {
+  font-weight: bold;
+  color: #4caf50 !important;
+  font-size: 1.1rem;
+}
+
+.room-select {
+  width: 100%;
+}
+
+.booking-actions {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.booking-actions button {
+  min-width: 200px;
+}
+
+.booking-actions mat-spinner {
+  margin-right: 8px;
+}
+
+.no-rooms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.guest-email-field {
+  grid-column: 1 / -1;
+  /* Make it full width in the grid */
+  background-color: #f1f8ff;
+  /* Light blue background to distinct it as Staff feature */
+  border-radius: 4px;
+}
+
+/* Guest Registration Panel */
+.guest-registration-panel {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.guest-registration-panel h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.guest-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-actions button mat-icon {
+  margin-right: 8px;
+}

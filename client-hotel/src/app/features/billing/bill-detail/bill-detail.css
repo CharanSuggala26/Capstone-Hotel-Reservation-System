@@ -1,0 +1,126 @@
+.bill-detail-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+mat-card {
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+mat-card-header {
+    background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+    padding: 2rem;
+    color: white;
+    margin-bottom: 0;
+}
+
+mat-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: -0.5px;
+}
+
+mat-card-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+mat-card-content {
+    padding: 2rem !important;
+}
+
+/* Detail Rows */
+mat-card-content p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #455a64;
+    border-bottom: 1px dashed #eceff1;
+    padding-bottom: 0.5rem;
+}
+
+mat-card-content p:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+mat-card-content strong {
+    color: #263238;
+    font-weight: 500;
+}
+
+/* Total Amount Styling */
+p.total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2e7d32;
+    /* Success Green */
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e0e0e0 !important;
+    border-bottom: none;
+}
+
+/* Payment Status Chip positioning */
+mat-chip {
+    margin-top: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Custom Status Colors */
+.status-paid {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+    border-color: #c8e6c9 !important;
+}
+
+.status-pending {
+    background-color: #ffebee !important;
+    color: #c62828 !important;
+    border-color: #ffcdd2 !important;
+}
+
+.status-refunded {
+    background-color: #fff3e0 !important;
+    color: #ef6c00 !important;
+    border-color: #ffe0b2 !important;
+}
+
+
+/* Actions */
+mat-card-actions {
+    padding: 1.5rem 2rem;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+button[mat-raised-button] {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Loading & Empty States */
+.loading,
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: #78909c;
+}
+
+.loading mat-spinner {
+    margin: 0 auto 1rem auto;
+}

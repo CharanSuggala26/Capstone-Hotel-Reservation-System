@@ -1,0 +1,41 @@
+<div class="user-edit-container">
+  <h2>{{ isEditMode ? 'Edit User' : 'User Details' }}</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Roles</mat-label>
+      <mat-select formControlName="roles" multiple required>
+        <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">
+        Save
+      </button>
+      <button mat-button type="button" routerLink="/dashboard/admin/users">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

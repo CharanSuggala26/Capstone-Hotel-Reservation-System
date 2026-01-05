@@ -1,0 +1,109 @@
+.hotels-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loading-container mat-spinner {
+  margin-bottom: 1rem;
+}
+
+.toolbar-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  width: 100%;
+}
+
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 10px;
+}
+
+.hotel-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header-image {
+  height: 140px;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hotel-icon {
+  transform: scale(3);
+}
+
+mat-card-header {
+  margin-top: 16px;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-body p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  color: #555;
+}
+
+.rooms-badge {
+  font-weight: bold;
+  color: #3f51b5;
+  margin-top: 12px;
+}
+
+mat-card-actions {
+  margin-top: auto;
+  padding: 8px 16px 16px;
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.no-data mat-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  margin-bottom: 1rem;
+}

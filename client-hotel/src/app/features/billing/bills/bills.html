@@ -1,0 +1,87 @@
+<div class="bills-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>My Bills</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="loading" class="loading-container">
+        <mat-spinner></mat-spinner>
+        <p>Loading bills...</p>
+      </div>
+
+      <div *ngIf="!loading">
+        <table mat-table [dataSource]="dataSource" matSort class="bills-table">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Bill #</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.id }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="userName">
+            <th mat-header-cell *matHeaderCellDef>Guest</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.userName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="roomNumber">
+            <th mat-header-cell *matHeaderCellDef>Room</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.roomNumber }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="roomCharges">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Room Charges</th>
+            <td mat-cell *matCellDef="let bill">${{ bill.roomCharges }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="additionalCharges">
+            <th mat-header-cell *matHeaderCellDef>Additional</th>
+            <td mat-cell *matCellDef="let bill">${{ bill.additionalCharges }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="taxAmount">
+            <th mat-header-cell *matHeaderCellDef>Tax</th>
+            <td mat-cell *matCellDef="let bill">${{ bill.taxAmount }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="totalAmount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Total</th>
+            <td mat-cell *matCellDef="let bill" class="total-amount">${{ bill.totalAmount }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="paymentStatus">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let bill">
+              <mat-chip [class.status-paid]="bill.paymentStatus === PaymentStatus.Paid"
+                [class.status-pending]="bill.paymentStatus === PaymentStatus.Pending"
+                [class.status-refunded]="bill.paymentStatus === PaymentStatus.Refunded" selected>
+                {{ getPaymentStatusText(bill.paymentStatus) }}
+              </mat-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let bill">
+              <button *ngIf="bill.paymentStatus === PaymentStatus.Pending" mat-raised-button color="primary"
+                (click)="goToBill(bill.id)">
+                <mat-icon>payment</mat-icon>
+                Pay Now
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+
+      <div *ngIf="!loading && dataSource.data.length === 0" class="no-data">
+        <mat-icon>receipt_long</mat-icon>
+        <p>No bills found.</p>
+        <p class="hint">Bills are usually created after checkout or by hotel staff; if you expected a bill immediately,
+          check your reservations or contact support.</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

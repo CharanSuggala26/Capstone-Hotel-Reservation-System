@@ -1,0 +1,143 @@
+.rooms-container {
+  max-width: 1400px;
+  /* Wider for rooms table */
+  width: 95%;
+  margin: 2rem auto;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  padding-left: 1rem;
+  border-left: 4px solid #1976d2;
+}
+
+/* Hotel Selector Area */
+.hotel-selector {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.hotel-selector mat-form-field {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Filter Panel Styling */
+.filter-panel {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-panel mat-form-field {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-panel button {
+  height: 56px;
+  /* Match form field height */
+}
+
+/* Room Form Layout (Add/Edit) */
+.room-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  border: 1px solid #e0e0e0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1.5rem;
+}
+
+/* Material Table Styling */
+mat-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+mat-header-row {
+  background-color: #1976d2;
+  /* Primary Header */
+  min-height: 56px;
+}
+
+mat-header-cell {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+mat-cell {
+  color: #37474f;
+  font-size: 0.95rem;
+}
+
+/* Hover effect for Table Rows */
+mat-row {
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+mat-row:hover {
+  background-color: #f1f8e9;
+  /* Light Green Tint on Hover */
+}
+
+/* Action Buttons within Table */
+.mat-column-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
