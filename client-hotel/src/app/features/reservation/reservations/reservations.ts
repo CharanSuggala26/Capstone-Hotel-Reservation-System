@@ -132,9 +132,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   cancelReservation(reservationId: number): void {
-    if (!confirm('Are you sure you want to cancel this reservation?')) {
-      return;
-    }
+
 
     this.reservationService.cancelReservation(reservationId).subscribe({
       next: () => {

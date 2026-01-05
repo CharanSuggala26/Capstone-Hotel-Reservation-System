@@ -83,13 +83,11 @@ export class UserListComponent implements OnInit, AfterViewInit {
     }
 
     deleteUser(userId: string): void {
-        if (confirm('Are you sure you want to delete this user?')) {
-            this.userService.deleteUser(userId).subscribe((response: any) => {
-                if (response.success !== false) {
-                    this.loadUsers();
-                }
-            });
-        }
+        this.userService.deleteUser(userId).subscribe((response: any) => {
+            if (response.success !== false) {
+                this.loadUsers();
+            }
+        });
     }
 
     editUser(userId: string): void {

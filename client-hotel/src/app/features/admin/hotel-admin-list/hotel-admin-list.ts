@@ -46,13 +46,11 @@ export class HotelAdminListComponent implements OnInit, AfterViewInit {
     }
 
     deleteHotel(id: number): void {
-        if (confirm('Are you sure you want to delete this hotel?')) {
-            this.hotelService.deleteHotel(id).subscribe((response: any) => {
-                if (response.success !== false) {
-                    this.loadHotels();
-                }
-            });
-        }
+        this.hotelService.deleteHotel(id).subscribe((response: any) => {
+            if (response.success !== false) {
+                this.loadHotels();
+            }
+        });
     }
 
     editHotelAdmin(id: number | null): void {

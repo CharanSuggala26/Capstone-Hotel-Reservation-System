@@ -254,7 +254,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   deleteRoom(id: number): void {
-    if (!confirm('Delete this room?')) return;
+
     this.hotelService.deleteRoom(id).subscribe((res: any) => {
       if (res?.success !== false) {
         this.snackBar.open('Room deleted successfully', 'Close', {

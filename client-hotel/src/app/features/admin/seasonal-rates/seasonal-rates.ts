@@ -142,7 +142,7 @@ export class SeasonalRatesComponent implements OnInit {
     }
 
     deleteRate(id: number): void {
-        if (!confirm('Are you sure you want to delete this rate?')) return;
+
         this.rateService.deleteRate(id).subscribe({
             next: (res) => {
                 if (res.success) {
