@@ -237,3 +237,4 @@ C:\Users\91789\source\repos\Capstone\HotelReservationTesting\obj\Debug\net9.0\re
 C:\Users\91789\source\repos\Capstone\HotelReservationTesting\obj\Debug\net9.0\HotelReservationTesting.pdb
 C:\Users\91789\source\repos\Capstone\HotelReservationTesting\obj\Debug\net9.0\HotelReservationTesting.genruntimeconfig.cache
 C:\Users\91789\source\repos\Capstone\HotelReservationTesting\obj\Debug\net9.0\ref\HotelReservationTesting.dll
+C:\Users\91789\source\repos\Capstone\HotelReservationTesting\obj\Debug\net9.0\HotelReservationTesting.sourcelink.json

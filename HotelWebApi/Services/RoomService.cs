@@ -180,4 +180,85 @@ public class RoomService : IRoomService
             })
             .ToListAsync();
     }
+    public async Task<IEnumerable<RoomDto>> GetRecommendedRoomsAsync(string userId)
+    {
+        // 1. Get User's Booking History
+        var history = await _context.Reservations
+            .Include(r => r.Room)
+            .Where(r => r.UserId == userId && (r.Status == ReservationStatus.CheckedOut || r.Status == ReservationStatus.Confirmed))
+            .ToListAsync();
+
+        if (!history.Any())
+        {
+            // Fallback: Return some available rooms if no history
+            return await _context.Rooms
+                .Include(r => r.Hotel)
+                .Where(r => r.Status == RoomStatus.Available)
+                .Take(5)
+                .Select(r => new RoomDto
+                {
+                    Id = r.Id,
+                    RoomNumber = r.RoomNumber,
+                    Type = r.Type,
+                    BasePrice = r.BasePrice,
+                    Capacity = r.Capacity,
+                    Status = r.Status,
+                    HotelId = r.HotelId,
+                    HotelName = r.Hotel.Name
+                })
+                .ToListAsync();
+        }
+
+        // 2. Derive Preferences
+        // Preferred Room Type
+        var preferredType = history
+            .GroupBy(r => r.Room.Type)
+            .OrderByDescending(g => g.Count())
+            .Select(g => g.Key)
+            .FirstOrDefault();
+
+        // Average Spend Per Night (approximation)
+        // Note: TotalAmount usually includes days * basePrice. 
+        // We really want to know roughly what 'BasePrice' tier they are in.
+        // Let's assume TotalAmount / Days is effective daily rate.
+        decimal avgDailySpend = 0;
+        if (history.Any())
+        {
+            var totalSpend = history.Sum(r => r.TotalAmount);
+            var totalDays = history.Sum(r => (r.CheckOutDate - r.CheckInDate).TotalDays);
+            if (totalDays > 0)
+                avgDailySpend = totalSpend / (decimal)totalDays;
+        }
+
+        // 3. Score Available Rooms
+        var availableRooms = await _context.Rooms
+            .Include(r => r.Hotel)
+            .Where(r => r.Status == RoomStatus.Available)
+            .ToListAsync();
+
+        var recommendedRooms = availableRooms
+            .Select(room => new
+            {
+                Room = room,
+                Score = (room.Type == preferredType ? 10 : 0) + 
+                        (Math.Abs(room.BasePrice - avgDailySpend) < 50 ? 5 : 
+                         Math.Abs(room.BasePrice - avgDailySpend) < 100 ? 2 : 0)
+            })
+            .OrderByDescending(x => x.Score)
+            .Take(5)
+            .Select(x => new RoomDto
+            {
+                Id = x.Room.Id,
+                RoomNumber = x.Room.RoomNumber,
+                Type = x.Room.Type,
+                BasePrice = x.Room.BasePrice,
+                Capacity = x.Room.Capacity,
+                Status = x.Room.Status,
+                HotelId = x.Room.HotelId,
+                HotelName = x.Room.Hotel.Name
+            })
+            .ToList();
+
+        return recommendedRooms;
+    }
 }

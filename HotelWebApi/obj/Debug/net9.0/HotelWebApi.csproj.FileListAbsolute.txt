@@ -156,3 +156,4 @@ C:\Users\91789\source\repos\Capstone\HotelWebApi\bin\Debug\net9.0\HotelWebApi.ru
 C:\Users\91789\source\repos\Capstone\HotelWebApi\bin\Debug\net9.0\HotelWebApi.pdb
 C:\Users\91789\source\repos\Capstone\HotelWebApi\obj\Debug\net9.0\HotelWebApi.genruntimeconfig.cache
 C:\Users\91789\source\repos\Capstone\HotelWebApi\obj\Debug\net9.0\ref\HotelWebApi.dll
+C:\Users\91789\source\repos\Capstone\HotelWebApi\obj\Debug\net9.0\HotelWebApi.sourcelink.json

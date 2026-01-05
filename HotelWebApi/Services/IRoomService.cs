@@ -14,4 +14,5 @@ public interface IRoomService
         DateTime checkIn,
         DateTime checkOut,
         int? hotelId);
+    Task<IEnumerable<RoomDto>> GetRecommendedRoomsAsync(string userId);
 }

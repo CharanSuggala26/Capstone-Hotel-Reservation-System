@@ -41,13 +41,13 @@ export class HotelService {
   }
 
   getAvailableRooms(checkIn: string, checkOut: string, hotelId: number) {
-  const params = new HttpParams()
-    .set('checkIn', checkIn)
-    .set('checkOut', checkOut)
-    .set('hotelId', hotelId.toString());
+    const params = new HttpParams()
+      .set('checkIn', checkIn)
+      .set('checkOut', checkOut)
+      .set('hotelId', hotelId.toString());
 
-  return this.http.get<ApiResponse<RoomDto[]>>(`${this.apiUrl}/Rooms/available`, { params });
-}
+    return this.http.get<ApiResponse<RoomDto[]>>(`${this.apiUrl}/Rooms/available`, { params });
+  }
 
   getRoom(id: number): Observable<ApiResponse<RoomDto>> {
     return this.http.get<ApiResponse<RoomDto>>(`${this.apiUrl}/Rooms/${id}`);
@@ -63,5 +63,9 @@ export class HotelService {
 
   deleteRoom(id: number): Observable<ApiResponse<void>> {
     return this.http.delete<ApiResponse<void>>(`${this.apiUrl}/Rooms/${id}`);
+  }
+
+  getRecommendedRooms(): Observable<RoomDto[]> {
+    return this.http.get<RoomDto[]>(`${this.apiUrl}/Rooms/recommendations`);
   }
 }

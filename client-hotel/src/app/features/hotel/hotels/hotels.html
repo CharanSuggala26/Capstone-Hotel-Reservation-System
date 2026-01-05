@@ -27,6 +27,33 @@
         <p>Loading hotels...</p>
       </div>
 
+      <!-- Recommendations Section -->
+      <div *ngIf="recommendedRooms.length > 0" class="recommendations-section">
+        <h3>Recommended for you based on your previous stays</h3>
+        <div class="hotel-grid">
+          <mat-card *ngFor="let room of recommendedRooms" class="hotel-card recommendation-card">
+            <div class="card-header-image highlight">
+              <mat-icon>star</mat-icon>
+            </div>
+            <mat-card-header>
+              <mat-card-title>{{ getRoomTypeName(room.type) }} - Room {{ room.roomNumber }}</mat-card-title>
+              <mat-card-subtitle>{{ room.hotelName }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="price-highlight">${{ room.basePrice }} / night</p>
+              <p>Capacity: {{ room.capacity }} Guests</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button mat-raised-button color="accent" [routerLink]="['/dashboard/hotels', room.hotelId, 'book']"
+                [queryParams]="{ roomId: room.id }">
+                Book Now
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <mat-divider style="margin: 20px 0;"></mat-divider>
+      </div>
+
       <!-- Hotel Cards Grid -->
       <div *ngIf="!loading && filteredHotels.length > 0" class="hotel-grid">
         <mat-card *ngFor="let hotel of filteredHotels" class="hotel-card">

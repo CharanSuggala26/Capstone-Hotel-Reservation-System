@@ -107,3 +107,26 @@ mat-card-actions {
   width: 48px;
   margin-bottom: 1rem;
 }
+
+/* Recommendations */
+.recommendations-section h3 {
+  color: #d84315;
+  /* Deep orange */
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.recommendation-card {
+  border: 1px solid #ffcc80;
+}
+
+.card-header-image.highlight {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  /* Orange gradient */
+}
+
+.price-highlight {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #d84315;
+}

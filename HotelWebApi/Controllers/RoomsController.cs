@@ -47,14 +47,16 @@ public class RoomsController : ControllerBase
         return Ok(rooms);
     }
 
-    //public async Task<ActionResult<IEnumerable<RoomDto>>> GetAvailableRooms(
-    //    [FromQuery] DateTime checkIn,
-    //    [FromQuery] DateTime checkOut,
-    //    [FromQuery] int? hotelId = null)
-    //{
-    //    var rooms = await _roomService.GetAvailableRoomsAsync(checkIn, checkOut, hotelId);
-    //    return Ok(rooms);
-    //}
+    [HttpGet("recommendations")]
+    [Authorize]
+    public async Task<ActionResult<IEnumerable<RoomDto>>> GetRecommendedRooms()
+    {
+        var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+        var rooms = await _roomService.GetRecommendedRoomsAsync(userId);
+        return Ok(rooms);
+    }
 
     [HttpPost]
     [Authorize(Roles = "Admin")]

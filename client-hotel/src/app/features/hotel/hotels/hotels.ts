@@ -8,9 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDividerModule } from '@angular/material/divider';
 import { HotelService } from '../../../services/hotel';
 import { AuthService } from '../../../services/auth';
-import { HotelDto } from '../../../models';
+import { HotelDto, RoomDto } from '../../../models';
 
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDividerModule
   ],
   templateUrl: './hotels.html',
   styleUrl: './hotels.css'
@@ -42,6 +44,7 @@ export class HotelsComponent implements OnInit {
 
   hotels: HotelDto[] = [];
   filteredHotels: HotelDto[] = [];
+  recommendedRooms: RoomDto[] = [];
   searchText = '';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -55,6 +58,9 @@ export class HotelsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadHotels();
+    if (this.hasRole('Guest')) {
+      this.loadRecommendations();
+    }
   }
 
   ngAfterViewInit(): void {
@@ -102,5 +108,26 @@ export class HotelsComponent implements OnInit {
 
   hasRole(role: string): boolean {
     return this.authService.hasRole(role);
+  }
+
+  loadRecommendations(): void {
+    this.hotelService.getRecommendedRooms().subscribe({
+      next: (rooms) => {
+        this.recommendedRooms = rooms;
+      },
+      error: (err) => {
+        console.error('Failed to load recommendations', err);
+      }
+    });
+  }
+
+  getRoomTypeName(type: number): string {
+    switch (type) {
+      case 1: return 'Single';
+      case 2: return 'Double';
+      case 3: return 'Suite';
+      case 4: return 'Deluxe';
+      default: return 'Unknown';
+    }
   }
 }
