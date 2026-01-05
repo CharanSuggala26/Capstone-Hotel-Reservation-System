@@ -42,6 +42,7 @@ public class RoomServiceTests
             UserId = "user1", 
             CheckInDate = DateTime.Today.AddDays(10), 
             CheckOutDate = DateTime.Today.AddDays(15), 
+            TotalAmount = 500, // 100 * 5 days
             Status = ReservationStatus.Booked,
             CreatedAt = DateTime.UtcNow
         };
@@ -98,5 +99,23 @@ public class RoomServiceTests
         
         var dbRoom = await _context.Rooms.FindAsync(result.Id);
         Assert.NotNull(dbRoom);
+    }
+
+    [Fact]
+    public async Task GetRecommendedRoomsAsync_ShouldPrioritizeUserPreferences()
+    {
+        // Arrange
+        // User1 has a booking for Room 1 (Single, 100/night)
+        
+        // Act
+        var recommendations = await _roomService.GetRecommendedRoomsAsync("user1");
+
+        // Assert
+        Assert.NotEmpty(recommendations);
+        var firstRec = recommendations.First();
+        
+        // Expect Room 1 to be top recommended because it matches Type=Single and Price ~ 100
+        Assert.Equal(1, firstRec.Id);
+        Assert.Equal(RoomType.Single, firstRec.Type);
     }
 }
