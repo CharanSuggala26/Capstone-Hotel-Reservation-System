@@ -17,7 +17,7 @@ public class ReservationServiceTests
     public ReservationServiceTests()
     {
         var options = new DbContextOptionsBuilder<HotelDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Unique DB for each test
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
 
         _context = new HotelDbContext(options);
@@ -40,12 +40,10 @@ public class ReservationServiceTests
         _context.SaveChanges();
     }
 
-    // Removed CreateReservationAsync tests as they were causing issues with method signatures and mocks.
-
     [Fact]
     public async Task GetUserReservationsAsync_ShouldReturnList_WhenReservationsExist()
     {
-        // Arrange
+       
         var reservation = new Reservation
         {
             RoomId = 1,
@@ -58,10 +56,8 @@ public class ReservationServiceTests
         _context.Reservations.Add(reservation);
         await _context.SaveChangesAsync();
 
-        // Act
         var result = await _reservationService.GetUserReservationsAsync("user1");
 
-        // Assert
         Assert.NotEmpty(result);
         Assert.Single(result);
         Assert.Equal(reservation.Id, result.First().Id);
@@ -70,7 +66,6 @@ public class ReservationServiceTests
     [Fact]
     public async Task CancelReservationAsync_ShouldReturnTrue_AndSetStatusToCancelled()
     {
-        // Arrange
         var reservation = new Reservation
         {
             RoomId = 1,
@@ -83,10 +78,8 @@ public class ReservationServiceTests
         _context.Reservations.Add(reservation);
         await _context.SaveChangesAsync();
 
-        // Act
         var result = await _reservationService.CancelReservationAsync(reservation.Id);
 
-        // Assert
         Assert.True(result);
         var updatedReservation = await _context.Reservations.FindAsync(reservation.Id);
         Assert.Equal(ReservationStatus.Cancelled, updatedReservation.Status);
@@ -95,7 +88,6 @@ public class ReservationServiceTests
     [Fact]
     public async Task ConfirmReservationAsync_ShouldReturnTrue_AndSetStatusToConfirmed()
     {
-        // Arrange
         var reservation = new Reservation
         {
             RoomId = 1,
@@ -108,10 +100,8 @@ public class ReservationServiceTests
         _context.Reservations.Add(reservation);
         await _context.SaveChangesAsync();
 
-        // Act
         var result = await _reservationService.ConfirmReservationAsync(reservation.Id);
 
-        // Assert
         Assert.True(result);
         var updatedReservation = await _context.Reservations.FindAsync(reservation.Id);
         Assert.Equal(ReservationStatus.Confirmed, updatedReservation.Status);

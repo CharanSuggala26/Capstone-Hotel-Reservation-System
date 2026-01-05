@@ -19,7 +19,7 @@ public class HotelDbContext : IdentityDbContext<User>
     {
         base.OnModelCreating(builder);
 
-        // Hotel 
+        // hotel 
         builder.Entity<Hotel>(entity =>
         {
             entity.HasKey(h => h.Id);
@@ -29,7 +29,7 @@ public class HotelDbContext : IdentityDbContext<User>
                   .OnDelete(DeleteBehavior.Cascade);
         });
 
-        // Room 
+        // room 
         builder.Entity<Room>(entity =>
         {
             entity.HasKey(r => r.Id);
@@ -41,7 +41,7 @@ public class HotelDbContext : IdentityDbContext<User>
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
-        // Reservation 
+        // reservation 
         builder.Entity<Reservation>(entity =>
         {
             entity.HasKey(r => r.Id);
@@ -57,7 +57,7 @@ public class HotelDbContext : IdentityDbContext<User>
                   .OnDelete(DeleteBehavior.Cascade);
         });
 
-        // Bill 
+        // bill 
         builder.Entity<Bill>(entity =>
         {
             entity.HasKey(b => b.Id);
@@ -71,19 +71,19 @@ public class HotelDbContext : IdentityDbContext<User>
                   .HasColumnType("decimal(10,2)");
         });
 
-        // SeasonalRate 
+        // seasonalRate 
         builder.Entity<SeasonalRate>(entity =>
         {
             entity.HasKey(s => s.Id);
             entity.Property(s => s.Multiplier)
-                  .HasColumnType("decimal(4,2)"); // e.g., 1.50
+                  .HasColumnType("decimal(4,2)"); 
             entity.HasOne(s => s.Hotel)
                   .WithMany()
                   .HasForeignKey(s => s.HotelId)
                   .OnDelete(DeleteBehavior.Cascade);
         });
 
-        // Notification 
+        // notification 
         builder.Entity<Notification>(entity =>
         {
             entity.HasKey(n => n.Id);

@@ -14,7 +14,6 @@ public class SeasonalRate
     
     public DateTime EndDate { get; set; }
     
-    // Multiplier for the base price. 1.0 = standard, 1.2 = +20%, 0.8 = -20%
     public decimal Multiplier { get; set; }
     
     public int HotelId { get; set; }

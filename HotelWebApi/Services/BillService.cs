@@ -96,7 +96,7 @@ public class BillService : IBillService
         if (reservation == null)
             throw new ArgumentException("Reservation not found");
 
-        // Check if bill already exists to prevent duplicates
+        //I'm Checking bills,if bill already exists inorder to prevent duplicate bookings
         var existingBill = await _context.Bills.FirstOrDefaultAsync(b => b.ReservationId == createBillDto.ReservationId);
         if (existingBill != null)
         {

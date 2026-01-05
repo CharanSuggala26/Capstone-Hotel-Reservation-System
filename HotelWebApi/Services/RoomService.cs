@@ -142,7 +142,6 @@ public class RoomService : IRoomService
     public async Task<IEnumerable<RoomDto>> GetAvailableRoomsAsync(
     DateTime checkIn, DateTime checkOut, int? hotelId)
     {
-        // Normalize dates (important)
         checkIn = checkIn.Date;
         checkOut = checkOut.Date;
 
@@ -156,7 +155,7 @@ public class RoomService : IRoomService
             roomsQuery = roomsQuery.Where(r => r.HotelId == hotelId.Value);
         }
 
-        // Exclude rooms with overlapping reservations
+        //I'm excluding rooms with overlapping reservations i.e duplicate bookings
         roomsQuery = roomsQuery.Where(r =>
             !r.Reservations.Any(res =>
                 res.Status != ReservationStatus.Cancelled &&
@@ -182,7 +181,7 @@ public class RoomService : IRoomService
     }
     public async Task<IEnumerable<RoomDto>> GetRecommendedRoomsAsync(string userId)
     {
-        // 1. Get User's Booking History
+        // firstly i'm taking user's booking history i.e user reservations
         var history = await _context.Reservations
             .Include(r => r.Room)
             .Where(r => r.UserId == userId && (r.Status == ReservationStatus.CheckedOut || r.Status == ReservationStatus.Confirmed))
@@ -190,7 +189,7 @@ public class RoomService : IRoomService
 
         if (!history.Any())
         {
-            // Fallback: Return some available rooms if no history
+            // if there are no reservations, i'll return some available rooms
             return await _context.Rooms
                 .Include(r => r.Hotel)
                 .Where(r => r.Status == RoomStatus.Available)
@@ -208,19 +207,15 @@ public class RoomService : IRoomService
                 })
                 .ToListAsync();
         }
-
-        // 2. Derive Preferences
-        // Preferred Room Type
+  
+        // taking preferences from preferred room type
         var preferredType = history
             .GroupBy(r => r.Room.Type)
             .OrderByDescending(g => g.Count())
             .Select(g => g.Key)
             .FirstOrDefault();
 
-        // Average Spend Per Night (approximation)
-        // Note: TotalAmount usually includes days * basePrice. 
-        // We really want to know roughly what 'BasePrice' tier they are in.
-        // Let's assume TotalAmount / Days is effective daily rate.
+        // I'm assuming TotalAmount/Days is effective daily rate i.e average spend per day
         decimal avgDailySpend = 0;
         if (history.Any())
         {
@@ -230,7 +225,7 @@ public class RoomService : IRoomService
                 avgDailySpend = totalSpend / (decimal)totalDays;
         }
 
-        // 3. Score Available Rooms
+        // scoring available rooms
         var availableRooms = await _context.Rooms
             .Include(r => r.Hotel)
             .Where(r => r.Status == RoomStatus.Available)

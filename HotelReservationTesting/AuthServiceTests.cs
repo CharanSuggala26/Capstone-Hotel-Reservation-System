@@ -20,25 +20,24 @@ public class AuthServiceTests
 
     public AuthServiceTests()
     {
-        // Mock UserManager
+        // UserManager
         var userStore = new Mock<IUserStore<User>>();
         _mockUserManager = new Mock<UserManager<User>>(
             userStore.Object, null!, null!, null!, null!, null!, null!, null!, null!);
 
-        // Mock SignInManager
+        // SignInManager
         var contextAccessor = new Mock<IHttpContextAccessor>();
         var claimsFactory = new Mock<IUserClaimsPrincipalFactory<User>>();
         _mockSignInManager = new Mock<SignInManager<User>>(
             _mockUserManager.Object, contextAccessor.Object, claimsFactory.Object, null!, null!, null!, null!);
 
-        // Mock RoleManager
+        // RoleManager
         var roleStore = new Mock<IRoleStore<IdentityRole>>();
         _mockRoleManager = new Mock<RoleManager<IdentityRole>>(
             roleStore.Object, null!, null!, null!, null!);
 
-        // Mock Configuration
         _mockConfiguration = new Mock<IConfiguration>();
-        _mockConfiguration.Setup(c => c["Jwt:Key"]).Returns("ThisIsASecretKeyForTestingPurposesOnly12345"); // Must be long enough
+        _mockConfiguration.Setup(c => c["Jwt:Key"]).Returns("ThisIsASecretKeyForTestingPurposesOnly12345"); 
         _mockConfiguration.Setup(c => c["Jwt:Issuer"]).Returns("TestIssuer");
         _mockConfiguration.Setup(c => c["Jwt:Audience"]).Returns("TestAudience");
 
@@ -75,7 +74,7 @@ public class AuthServiceTests
     [Fact]
     public async Task LoginAsync_ShouldReturnFailure_WhenUserNotFound()
     {
-        var loginDto = new LoginDto { Email = "nonexistent@example.com", Password = "Password123!" };
+        var loginDto = new LoginDto { Email = "nonexistent@emai.com", Password = "Password123!" };
 
         _mockUserManager.Setup(m => m.FindByEmailAsync(loginDto.Email)).ReturnsAsync((User?)null);
 

@@ -20,7 +20,6 @@ public class NotificationBackgroundService : BackgroundService
     {
         _logger.LogInformation("Notification Background Service is starting.");
 
-        // Run immediately on startup
         try
         {
             await ProcessNotificationsAsync(stoppingToken);
@@ -42,7 +41,7 @@ public class NotificationBackgroundService : BackgroundService
                 }
                 catch (OperationCanceledException)
                 {
-                    // Allow the cancellation to propagate out of the inner loop
+                    // I'm allowing the cancellation to go out of the inner loop
                     throw;
                 }
                 catch (Exception ex)
@@ -53,7 +52,6 @@ public class NotificationBackgroundService : BackgroundService
         }
         catch (OperationCanceledException)
         {
-            // Graceful shutdown
             _logger.LogInformation("Notification Background Service is stopping.");
         }
     }
@@ -63,8 +61,7 @@ public class NotificationBackgroundService : BackgroundService
         using var scope = _serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<HotelDbContext>();
 
-        // 1. Booking Confirmation Notifications
-        // Send notification for reservations that are 'Confirmed' but haven't received a confirmation notification yet
+        // booking confirmation notifications for users whose reservations have been confirmed after manager clicks "Confirm" button.. 
         var unconfirmedReservations = await context.Reservations
             .Where(r => r.Status == ReservationStatus.Confirmed &&
                         !context.Notifications.Any(n => n.ReservationId == r.Id && n.Type == NotificationType.BookingConfirmation))
@@ -85,12 +82,10 @@ public class NotificationBackgroundService : BackgroundService
             _logger.LogInformation($"Created confirmation notification for Reservation {reservation.Id}");
         }
 
-        // 2. Check-in Reminders
-        // Send reminder if CheckInDate is tomorrow and status is Confirmed
+        // check-in reminders sending reminder if checkIn date is tomorrow and status is Confirmed my manager
         var tomorrow = DateTime.UtcNow.Date.AddDays(1);
         var today = DateTime.UtcNow.Date;
 
-        // Note: Assuming CheckInDate is stored as Date (00:00:00)
         var checkInReminders = await context.Reservations
             .Where(r => r.Status == ReservationStatus.Confirmed &&
                         r.CheckInDate.Date == tomorrow &&
@@ -112,8 +107,7 @@ public class NotificationBackgroundService : BackgroundService
             _logger.LogInformation($"Created check-in reminder for Reservation {reservation.Id}");
         }
 
-        // 3. Check-out Reminders
-        // Send reminder if CheckOutDate is tomorrow and status is CheckedIn
+        // check-out reminders sending reminder if checkout date is tomorrow and status is checkedin
         var checkOutReminders = await context.Reservations
             .Where(r => r.Status == ReservationStatus.CheckedIn &&
                         r.CheckOutDate.Date == tomorrow &&

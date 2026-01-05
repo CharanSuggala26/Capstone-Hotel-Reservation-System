@@ -41,7 +41,7 @@ public class ReservationsController : ControllerBase
 
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         
-        // Allow Admin, HotelManager, and Receptionist to view any reservation
+        // allowing admin,hotelmanager and receptionist to view any reservation
         bool isStaff = User.IsInRole("Admin") || User.IsInRole("HotelManager") || User.IsInRole("Receptionist");
         
         if (reservation.UserId != userId && !isStaff)
@@ -57,7 +57,7 @@ public class ReservationsController : ControllerBase
         if (string.IsNullOrEmpty(userId))
             return Unauthorized();
 
-        // Handle Walk-In / Booking for another user (Receptionist/Admin only)
+        //walk-in/booking for another user receptionist/admin only
         if (!string.IsNullOrEmpty(createReservationDto.GuestEmail))
         {
             bool isStaff = User.IsInRole("Admin") || User.IsInRole("Receptionist") || User.IsInRole("HotelManager");
@@ -94,7 +94,7 @@ public class ReservationsController : ControllerBase
 
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         
-        // Allow Admin, HotelManager, and Receptionist to update any reservation
+        // allowing admin,hotelmanager and receptionist to update any reservation
         bool isStaff = User.IsInRole("Admin") || User.IsInRole("HotelManager") || User.IsInRole("Receptionist");
         
         if (existingReservation.UserId != userId && !isStaff)
@@ -112,8 +112,8 @@ public class ReservationsController : ControllerBase
             return NotFound();
 
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        
-        // Allow Admin, HotelManager, and Receptionist to cancel any reservation
+
+        // allowing admin,hotelmanager and receptionist to cancel any reservation
         bool isStaff = User.IsInRole("Admin") || User.IsInRole("HotelManager") || User.IsInRole("Receptionist");
 
         if (existingReservation.UserId != userId && !isStaff)
@@ -134,7 +134,7 @@ public class ReservationsController : ControllerBase
         if (reservation == null)
             return NotFound();
 
-        // Only Staff can confirm
+        // only hotelmanger can confirm
         var result = await _reservationService.ConfirmReservationAsync(id);
         if (!result)
             return NotFound();

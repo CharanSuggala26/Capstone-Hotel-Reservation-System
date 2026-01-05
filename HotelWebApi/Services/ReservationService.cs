@@ -83,7 +83,7 @@ public class ReservationService : IReservationService
         if (room == null)
             throw new ArgumentException("Room not found");
 
-        // Check for double booking
+        // Checking for double booking - not allowing duplicate reservations..
         bool isRoomOccupied = await _context.Reservations
             .AnyAsync(r => r.RoomId == createReservationDto.RoomId 
                         && r.Status != ReservationStatus.Cancelled 
@@ -94,7 +94,7 @@ public class ReservationService : IReservationService
         if (isRoomOccupied)
             throw new ArgumentException("Room is already booked for the selected dates.");
 
-        // Calculate dynamic price based on seasonal rates
+        // seasonal pricing calculation here
         var totalAmount = await _rateService.CalculateDynamicPriceAsync(
             room.Id, 
             createReservationDto.CheckInDate, 
@@ -146,11 +146,10 @@ public class ReservationService : IReservationService
         if (reservation == null) return false;
         
         if (reservation.Status == ReservationStatus.Cancelled)
-            return true; // Already cancelled
+            return true; 
 
         reservation.Status = ReservationStatus.Cancelled;
 
-        // Cancel Notification
         var notification = new Notification
         {
             UserId = reservation.UserId,
@@ -172,11 +171,6 @@ public class ReservationService : IReservationService
         if (reservation == null) return false;
 
         reservation.Status = ReservationStatus.Confirmed;
-        // Note: NotificationBackgroundService picks up Confirmed status to send BookingConfirmation notification.
-        // We can also create it here immediately if we want instant feedback, but to avoid duplicates with the background service,
-        // we'll rely on the background service OR check if one exists.
-        // The background service checks if a notification of type BookingConfirmation exists.
-        // So we can create one here safely.
         
         var notification = new Notification
         {
@@ -205,7 +199,7 @@ public class ReservationService : IReservationService
         reservation.Status = ReservationStatus.CheckedIn;
         reservation.CheckedInAt = DateTime.UtcNow;
 
-        // Check-in Notification
+        // check-in notification 
         var notification = new Notification
         {
             UserId = reservation.UserId,
@@ -235,11 +229,10 @@ public class ReservationService : IReservationService
         reservation.Status = ReservationStatus.CheckedOut;
         reservation.CheckedOutAt = DateTime.UtcNow;
         
-        // Auto-generate Bill if not exists
         var existingBill = await _context.Bills.FirstOrDefaultAsync(b => b.ReservationId == reservationId);
         if (existingBill == null)
         {
-            var taxAmount = reservation.TotalAmount * 0.1m; // 10% tax
+            var taxAmount = reservation.TotalAmount * 0.1m; 
             var bill = new Bill
             {
                 ReservationId = reservationId,
@@ -253,7 +246,7 @@ public class ReservationService : IReservationService
             _context.Bills.Add(bill);
         }
 
-        // Check-out Notification
+        // check-out notification
         var notification = new Notification
         {
             UserId = reservation.UserId,

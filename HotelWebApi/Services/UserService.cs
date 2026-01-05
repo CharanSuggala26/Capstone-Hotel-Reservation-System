@@ -133,8 +133,6 @@ public class UserService : IUserService
         if (hotel == null)
             return new ApiResponse<bool> { Success = false, Message = "Hotel not found" };
 
-        // For now, we'll store hotel assignment in a custom claim
-        // In a real system, you might want a separate UserHotel table
         var existingClaim = await _userManager.GetClaimsAsync(user);
         var hotelClaim = existingClaim.FirstOrDefault(c => c.Type == "AssignedHotel");
         
@@ -157,7 +155,7 @@ public class UserService : IUserService
         if (user == null)
             return new ApiResponse<bool> { Success = false, Message = "User not found" };
 
-        // Check if user has active reservations
+        // user cannot be deleted if he has active reservations
         var hasActiveReservations = await _context.Reservations
             .AnyAsync(r => r.UserId == userId && 
                           (r.Status == ReservationStatus.Booked || 

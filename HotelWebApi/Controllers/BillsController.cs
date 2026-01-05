@@ -27,7 +27,7 @@ public class BillsController : ControllerBase
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized("User not authenticated");
 
-            // Admin, HotelManager, and Receptionist can see all bills, regular users only their own
+            // admin,hotelmanager and receptionist can see all bills but regular users only their bills..
             IEnumerable<BillDto> bills;
             if (User.IsInRole("Admin") || User.IsInRole("Receptionist") || User.IsInRole("HotelManager"))
             {
@@ -59,7 +59,7 @@ public class BillsController : ControllerBase
             if (bill == null)
                 return NotFound($"Bill with ID {id} not found");
 
-            // Check if user owns this bill (unless admin, hotel manager or receptionist)
+            // checking if user owns this bill
             if (!User.IsInRole("Admin") && !User.IsInRole("Receptionist") && !User.IsInRole("HotelManager") && !await _billService.UserOwnsBillAsync(userId, id))
                 return Forbid("You don't have permission to access this bill");
 

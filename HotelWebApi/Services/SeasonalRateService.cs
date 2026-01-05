@@ -33,7 +33,6 @@ public class SeasonalRateService : ISeasonalRateService
 
     public async Task<SeasonalRateDto> CreateRateAsync(CreateSeasonalRateDto createDto)
     {
-        // Simple overlap check? For now, we allow overlaps and take MAX multiplier
         var rate = new SeasonalRate
         {
             Name = createDto.Name,
@@ -69,17 +68,11 @@ public class SeasonalRateService : ISeasonalRateService
 
     public async Task<decimal> CalculateDynamicPriceAsync(int roomId, DateTime checkIn, DateTime checkOut, decimal basePrice)
     {
-        // Fetch rates overlapping with the date range for the room's hotel
-        // 1. Get HotelId from RoomId
-        // This helper assumes the caller might not know HotelId, but knowing it is better.
-        // Let's optimize: fetch room's hotel ID inside here.
-        
         var room = await _context.Rooms.FindAsync(roomId);
         if (room == null) return basePrice * (decimal)(checkOut - checkIn).TotalDays;
 
         var hotelId = room.HotelId;
 
-        // Fetch all rates for this hotel
         var rates = await _context.SeasonalRates
             .Where(s => s.HotelId == hotelId)
             .ToListAsync();
@@ -88,14 +81,13 @@ public class SeasonalRateService : ISeasonalRateService
         
         for (var date = checkIn; date < checkOut; date = date.AddDays(1))
         {
-            // Find applicable rates for this specific date
+            // pricing also based on checkin,checkout
             var activeRates = rates.Where(r => date >= r.StartDate && date <= r.EndDate).ToList();
             
             decimal multiplier = 1.0m;
             if (activeRates.Any())
             {
-                // Logic: take the highest multiplier if multiple overlap (e.g. holiday inside summer)
-                // Or multiply them? Usually MAX is safer to avoid insane prices.
+             //used from seasonal pricing - Admin, Manager can set multiplier
                 multiplier = activeRates.Max(r => r.Multiplier);
             }
             

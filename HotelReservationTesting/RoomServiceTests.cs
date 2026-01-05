@@ -34,7 +34,6 @@ public class RoomServiceTests
         _context.Hotels.Add(hotel);
         _context.Rooms.AddRange(room1, room2, room3);
         
-        // Add a reservation for Room 1
         var res = new Reservation 
         { 
             Id = 1, 
@@ -42,7 +41,7 @@ public class RoomServiceTests
             UserId = "user1", 
             CheckInDate = DateTime.Today.AddDays(10), 
             CheckOutDate = DateTime.Today.AddDays(15), 
-            TotalAmount = 500, // 100 * 5 days
+            TotalAmount = 500,
             Status = ReservationStatus.Booked,
             CreatedAt = DateTime.UtcNow
         };
@@ -55,14 +54,9 @@ public class RoomServiceTests
     [Fact]
     public async Task GetAvailableRoomsAsync_ShouldReturnAllAvailable_WhenNoOverlap()
     {
-        // Act
-        // Check dates before the existing reservation
+        // First i'll check dates before the existing reservation to get available rooms only
         var rooms = await _roomService.GetAvailableRoomsAsync(DateTime.Today.AddDays(1), DateTime.Today.AddDays(5), null);
 
-        // Assert
-        // Room 1 is available (reservation is days 10-15)
-        // Room 2 is available
-        // Room 3 is status=Occupied, so it should exclude it (based on code I saw earlier 'Where(r => r.Status == RoomStatus.Available)')
         Assert.Contains(rooms, r => r.Id == 1);
         Assert.Contains(rooms, r => r.Id == 2);
         Assert.DoesNotContain(rooms, r => r.Id == 3);
@@ -71,11 +65,8 @@ public class RoomServiceTests
     [Fact]
     public async Task GetAvailableRoomsAsync_ShouldExcludeRoom_WhenReservationOverlaps()
     {
-        // Act
-        // Overlap with Room 1 (10-15)
         var rooms = await _roomService.GetAvailableRoomsAsync(DateTime.Today.AddDays(12), DateTime.Today.AddDays(14), null);
 
-        // Assert
         Assert.DoesNotContain(rooms, r => r.Id == 1);
         Assert.Contains(rooms, r => r.Id == 2);
     }
@@ -104,17 +95,13 @@ public class RoomServiceTests
     [Fact]
     public async Task GetRecommendedRoomsAsync_ShouldPrioritizeUserPreferences()
     {
-        // Arrange
-        // User1 has a booking for Room 1 (Single, 100/night)
-        
-        // Act
+        // Here User1 has a booking for Room 1 - Single - 100/night
         var recommendations = await _roomService.GetRecommendedRoomsAsync("user1");
 
-        // Assert
         Assert.NotEmpty(recommendations);
         var firstRec = recommendations.First();
         
-        // Expect Room 1 to be top recommended because it matches Type=Single and Price ~ 100
+        // I'm Assuming Room 1 to be top recommended because it matches Type = Single and Price approx 100
         Assert.Equal(1, firstRec.Id);
         Assert.Equal(RoomType.Single, firstRec.Type);
     }

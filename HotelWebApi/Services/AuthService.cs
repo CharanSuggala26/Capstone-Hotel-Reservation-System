@@ -78,7 +78,7 @@ public class AuthService : IAuthService
         if (!result.Succeeded)
             return new AuthResponseDto { Success = false, Message = string.Join(", ", result.Errors.Select(e => e.Description)) };
 
-        // Assign default Guest role
+        //I've assigned guest role as default role...
         await _userManager.AddToRoleAsync(user, "Guest");
         
         var token = await GenerateJwtTokenAsync(user);
@@ -132,18 +132,17 @@ public class AuthService : IAuthService
         if (user == null)
             return new ApiResponse<bool> { Success = false, Message = "User not found" };
 
-        // Validate roles exist
+        // for each role, checking if it exists or not
         foreach (var role in updateRoleDto.Roles)
         {
             if (!await _roleManager.RoleExistsAsync(role))
                 return new ApiResponse<bool> { Success = false, Message = $"Role '{role}' does not exist" };
         }
 
-        // Remove all current roles
         var currentRoles = await _userManager.GetRolesAsync(user);
         await _userManager.RemoveFromRolesAsync(user, currentRoles);
 
-        // Add new roles
+        // assigning new roles for the users
         await _userManager.AddToRolesAsync(user, updateRoleDto.Roles);
 
         return new ApiResponse<bool>
@@ -171,7 +170,6 @@ public class AuthService : IAuthService
             claims.Add(new Claim("HotelId", hotelClaim.Value));
         }
 
-        // Add role claims
         foreach (var role in roles)
         {
             claims.Add(new Claim(ClaimTypes.Role, role));

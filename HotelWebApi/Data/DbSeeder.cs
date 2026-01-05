@@ -14,7 +14,7 @@ public static class DbSeeder
 
         await context.Database.EnsureCreatedAsync();
 
-        // Seed Roles
+        // roles
         string[] roles = { "Admin", "HotelManager", "Receptionist", "Guest" };
         foreach (var role in roles)
         {
@@ -22,7 +22,7 @@ public static class DbSeeder
                 await roleManager.CreateAsync(new IdentityRole(role));
         }
 
-        // Seed Users
+        // users
         var users = new List<User>();
         if (await userManager.FindByEmailAsync("admin@hotel.com") == null)
         {
@@ -40,7 +40,7 @@ public static class DbSeeder
             users.Add(admin);
         }
 
-        // Seed Guest Users
+        // guest/users
         var guestEmails = new[] { "john@example.com", "jane@example.com", "bob@example.com" };
         foreach (var email in guestEmails)
         {
@@ -61,7 +61,7 @@ public static class DbSeeder
             }
         }
 
-        // Seed Hotels
+        // hotels
         if (!context.Hotels.Any())
         {
             var hotels = new List<Hotel>
@@ -73,7 +73,7 @@ public static class DbSeeder
             context.Hotels.AddRange(hotels);
             await context.SaveChangesAsync();
 
-            // Seed Rooms
+            // rooms
             var rooms = new List<Room>();
             foreach (var hotel in hotels)
             {
@@ -93,7 +93,7 @@ public static class DbSeeder
             context.Rooms.AddRange(rooms);
             await context.SaveChangesAsync();
 
-            // Seed Reservations
+            // reservations
             var allUsers = await userManager.GetUsersInRoleAsync("Guest");
             var allRooms = context.Rooms.ToList();
             var reservations = new List<Reservation>();
@@ -124,7 +124,7 @@ public static class DbSeeder
             context.Reservations.AddRange(reservations);
             await context.SaveChangesAsync();
 
-            // Seed Bills
+            // bills
             var bills = new List<Bill>();
             foreach (var reservation in reservations.Where(r => r.Status == ReservationStatus.CheckedOut))
             {
