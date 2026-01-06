@@ -6,21 +6,59 @@
       "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\reservationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\roomservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\hotelreservationtesting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\hotelwebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:hotelwebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\seasonalratescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\seasonalratescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\data\\hoteldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:data\\hoteldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,24 +89,54 @@
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\migrations\\20251231125617_seasonalrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:migrations\\20251231125617_seasonalrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\seasonalrateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\seasonalrateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\notificationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\notificationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\roomservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13C7EA58-4041-4638-A09B-5D7F8ACFBD83}|..\\HotelReservationTesting\\HotelReservationTesting.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelreservationtesting\\hotelreservationtesting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\migrations\\20251231125617_seasonalrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:migrations\\20251231125617_seasonalrates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\dtos\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,18 +151,6 @@
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -103,24 +159,8 @@
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:dtos\\roomdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\dtos\\billdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:dtos\\billdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -135,10 +175,6 @@
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:dtos\\hoteldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\migrations\\hoteldbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:migrations\\hoteldbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -149,14 +185,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|solutionrelative:services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D85173CC-6D75-4E44-AFCA-4B644B8BA72F}|HotelWebApi.csproj|c:\\users\\91789\\source\\repos\\capstone\\hotelwebapi\\hotelwebapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -170,19 +198,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RoomServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\RoomServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\RoomServiceTests.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\RoomServiceTests.cs",
-              "RelativeToolTip": "..\\HotelReservationTesting\\RoomServiceTests.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "HotelWebApi.http",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\HotelWebApi.http",
+              "RelativeDocumentMoniker": "HotelWebApi.http",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\HotelWebApi.http",
+              "RelativeToolTip": "HotelWebApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-05T20:03:24.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SeasonalRatesController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\SeasonalRatesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SeasonalRatesController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\SeasonalRatesController.cs",
+              "RelativeToolTip": "Controllers\\SeasonalRatesController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T14:00:01.67Z"
+              "WhenOpened": "2026-01-05T20:03:10.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HotelsController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\HotelsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HotelsController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\HotelsController.cs",
+              "RelativeToolTip": "Controllers\\HotelsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T18:00:10.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-29T17:57:35.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\AuthServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\AuthServiceTests.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\AuthServiceTests.cs",
+              "RelativeToolTip": "..\\HotelReservationTesting\\AuthServiceTests.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAowAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T19:16:36.067Z"
             },
             {
               "$type": "Document",
@@ -192,206 +268,146 @@
               "RelativeDocumentMoniker": "..\\HotelReservationTesting\\ReservationServiceTests.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\ReservationServiceTests.cs",
               "RelativeToolTip": "..\\HotelReservationTesting\\ReservationServiceTests.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAiwF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAA5wGYAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T13:59:53.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\AuthServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\AuthServiceTests.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\AuthServiceTests.cs",
-              "RelativeToolTip": "..\\HotelReservationTesting\\AuthServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomsController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\RoomsController.cs",
+              "RelativeToolTip": "Controllers\\RoomsController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAADwv0wAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T19:16:36.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HotelReservationTesting.csproj",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\HotelReservationTesting.csproj",
-              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\HotelReservationTesting.csproj",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\HotelReservationTesting.csproj",
-              "RelativeToolTip": "..\\HotelReservationTesting\\HotelReservationTesting.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-03T19:16:33.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:38:33.411Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAiwF8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T11:11:23.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Bill.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Bill.cs",
-              "RelativeDocumentMoniker": "Models\\Bill.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Bill.cs",
-              "RelativeToolTip": "Models\\Bill.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAswBMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:53:20.874Z"
+              "WhenOpened": "2025-12-30T09:45:56.893Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Reservation.cs",
-              "RelativeDocumentMoniker": "Models\\Reservation.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Reservation.cs",
-              "RelativeToolTip": "Models\\Reservation.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA9wBoAAAA2AAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:45:25.816Z"
+              "WhenOpened": "2025-12-29T15:52:57.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "BillsController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\BillsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BillsController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\BillsController.cs",
+              "RelativeToolTip": "Controllers\\BillsController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAowEQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T10:17:50.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "HotelDbContext.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\HotelDbContext.cs",
               "RelativeDocumentMoniker": "Data\\HotelDbContext.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\HotelDbContext.cs",
               "RelativeToolTip": "Data\\HotelDbContext.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAADwv08AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T15:35:02.586Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HotelsController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\HotelsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HotelsController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\HotelsController.cs",
-              "RelativeToolTip": "Controllers\\HotelsController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCcAAABJAAAAAAAAAA==",
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAAIsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T18:00:10.846Z"
+              "WhenOpened": "2025-12-30T13:53:43.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "Data\\DbSeeder.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAQwJYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T06:34:23.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ReservationsController.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAIwIgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T10:17:52.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Helpers\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Helpers\\JwtHelper.cs",
+              "RelativeToolTip": "Helpers\\JwtHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:10:28.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:57:20.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Reservation.cs",
+              "RelativeToolTip": "Models\\Reservation.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowBoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:45:25.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Models\\Notification.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Notification.cs",
               "RelativeToolTip": "Models\\Notification.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA/wBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-03T18:26:26.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "BillsController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\BillsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BillsController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\BillsController.cs",
-              "RelativeToolTip": "Controllers\\BillsController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAwwGwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T10:17:50.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BillService.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\BillService.cs",
-              "RelativeDocumentMoniker": "Services\\BillService.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\BillService.cs",
-              "RelativeToolTip": "Services\\BillService.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAiwHsAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:17.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SeasonalRate.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\SeasonalRate.cs",
-              "RelativeDocumentMoniker": "Models\\SeasonalRate.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\SeasonalRate.cs",
-              "RelativeToolTip": "Models\\SeasonalRate.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T18:26:59.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "BillDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\BillDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\BillDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\BillDto.cs",
-              "RelativeToolTip": "DTOs\\BillDto.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T12:26:31.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Room.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Room.cs",
-              "RelativeDocumentMoniker": "Models\\Room.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Room.cs",
-              "RelativeToolTip": "Models\\Room.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvxYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:53:55.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IReservationService.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IReservationService.cs",
-              "RelativeDocumentMoniker": "Services\\IReservationService.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IReservationService.cs",
-              "RelativeToolTip": "Services\\IReservationService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T09:40:40.454Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ReservationDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\ReservationDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\ReservationDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\ReservationDto.cs",
-              "RelativeToolTip": "DTOs\\ReservationDto.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA4wD0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:56:49.768Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "Hotel.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Hotel.cs",
               "RelativeDocumentMoniker": "Models\\Hotel.cs",
@@ -404,234 +420,162 @@
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "RoomsController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\RoomsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RoomsController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\RoomsController.cs",
-              "RelativeToolTip": "Controllers\\RoomsController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwEwAAAAAAAAAAAAAAA==",
+              "Title": "Bill.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Bill.cs",
+              "RelativeDocumentMoniker": "Models\\Bill.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Bill.cs",
+              "RelativeToolTip": "Models\\Bill.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T09:45:56.893Z"
+              "WhenOpened": "2025-12-29T15:53:20.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ReservationsController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\ReservationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\ReservationsController.cs",
-              "RelativeToolTip": "Controllers\\ReservationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T10:17:52.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20251231125617_SeasonalRates.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\20251231125617_SeasonalRates.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251231125617_SeasonalRates.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\20251231125617_SeasonalRates.cs",
-              "RelativeToolTip": "Migrations\\20251231125617_SeasonalRates.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T12:56:18.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ReservationService.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\ReservationService.cs",
-              "RelativeDocumentMoniker": "Services\\ReservationService.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\ReservationService.cs",
-              "RelativeToolTip": "Services\\ReservationService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAACoAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T09:15:13.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "RoomDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\RoomDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\RoomDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\RoomDto.cs",
-              "RelativeToolTip": "DTOs\\RoomDto.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAA/wDsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:56:40.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 22,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\UserService.cs",
               "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAADwv7UAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAANMAAAAAAAAAAADwv6YAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T16:55:15.497Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SeasonalRateService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\SeasonalRateService.cs",
+              "RelativeDocumentMoniker": "Services\\SeasonalRateService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\SeasonalRateService.cs",
+              "RelativeToolTip": "Services\\SeasonalRateService.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAowF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:53:52.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SeasonalRate.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\SeasonalRate.cs",
+              "RelativeDocumentMoniker": "Models\\SeasonalRate.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\SeasonalRate.cs",
+              "RelativeToolTip": "Models\\SeasonalRate.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T18:26:59.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvxYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:53:55.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:38:33.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\ReservationService.cs",
+              "RelativeDocumentMoniker": "Services\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\ReservationService.cs",
+              "RelativeToolTip": "Services\\ReservationService.cs",
+              "ViewState": "AgIAAB8BAAAAAAAAAAAUwPgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T09:15:13.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "NotificationBackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\NotificationBackgroundService.cs",
+              "RelativeDocumentMoniker": "Services\\NotificationBackgroundService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\NotificationBackgroundService.cs",
+              "RelativeToolTip": "Services\\NotificationBackgroundService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:33:30.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BillService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\BillService.cs",
+              "RelativeDocumentMoniker": "Services\\BillService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\BillService.cs",
+              "RelativeToolTip": "Services\\BillService.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAADwv6wAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:42:17.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAswLUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:11:41.56Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\UserDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\UserDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\UserDto.cs",
-              "RelativeToolTip": "DTOs\\UserDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:56:33.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IRoomService.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IRoomService.cs",
-              "RelativeDocumentMoniker": "Services\\IRoomService.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IRoomService.cs",
-              "RelativeToolTip": "Services\\IRoomService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T09:53:20.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAuwGIAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:53:43.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
               "Title": "RoomService.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\RoomService.cs",
               "RelativeDocumentMoniker": "Services\\RoomService.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\RoomService.cs",
               "RelativeToolTip": "Services\\RoomService.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAADwv6AAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAIwPMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T15:42:40.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-29T17:57:35.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:52:57.016Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "DbSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\DbSeeder.cs",
-              "RelativeDocumentMoniker": "Data\\DbSeeder.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Data\\DbSeeder.cs",
-              "RelativeToolTip": "Data\\DbSeeder.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAADwv1oAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T06:34:23.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "HotelDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\HotelDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\HotelDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\HotelDto.cs",
-              "RelativeToolTip": "DTOs\\HotelDto.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwCUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:56:56.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "CommonDto.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\CommonDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\CommonDto.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\CommonDto.cs",
-              "RelativeToolTip": "DTOs\\CommonDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:57:04.265Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-29T16:04:22.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "HotelDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\HotelDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\HotelDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\HotelDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\HotelDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "RoomServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\RoomServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\RoomServiceTests.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\RoomServiceTests.cs",
+              "RelativeToolTip": "..\\HotelReservationTesting\\RoomServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:52:34.198Z"
+              "WhenOpened": "2026-01-05T14:00:01.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwBwAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 28,
+              "Title": "HotelService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\HotelService.cs",
+              "RelativeDocumentMoniker": "Services\\HotelService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\HotelService.cs",
+              "RelativeToolTip": "Services\\HotelService.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAAHgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:44:13.451Z"
+              "WhenOpened": "2025-12-29T15:42:29.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwBMAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:43:00.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 27,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "Services\\IAuthService.cs",
@@ -643,19 +587,187 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "HotelService.cs",
-              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\HotelService.cs",
-              "RelativeDocumentMoniker": "Services\\HotelService.cs",
-              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\HotelService.cs",
-              "RelativeToolTip": "Services\\HotelService.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAuwHgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 33,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAiwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:29.536Z"
+              "WhenOpened": "2025-12-29T11:11:23.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "HotelReservationTesting.csproj",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\HotelReservationTesting.csproj",
+              "RelativeDocumentMoniker": "..\\HotelReservationTesting\\HotelReservationTesting.csproj",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\HotelReservationTesting.csproj",
+              "RelativeToolTip": "..\\HotelReservationTesting\\HotelReservationTesting.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-03T19:16:33.931Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
+              "Title": "BillDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\BillDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\BillDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\BillDto.cs",
+              "RelativeToolTip": "DTOs\\BillDto.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T12:26:31.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IReservationService.cs",
+              "RelativeDocumentMoniker": "Services\\IReservationService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IReservationService.cs",
+              "RelativeToolTip": "Services\\IReservationService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T09:40:40.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ReservationDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\ReservationDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\ReservationDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\ReservationDto.cs",
+              "RelativeToolTip": "DTOs\\ReservationDto.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA4wD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:56:49.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20251231125617_SeasonalRates.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\20251231125617_SeasonalRates.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251231125617_SeasonalRates.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\20251231125617_SeasonalRates.cs",
+              "RelativeToolTip": "Migrations\\20251231125617_SeasonalRates.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T12:56:18.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RoomDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\RoomDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\RoomDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\RoomDto.cs",
+              "RelativeToolTip": "DTOs\\RoomDto.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAA/wDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:56:40.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:56:33.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IRoomService.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IRoomService.cs",
+              "RelativeDocumentMoniker": "Services\\IRoomService.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Services\\IRoomService.cs",
+              "RelativeToolTip": "Services\\IRoomService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:53:20.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "HotelDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\HotelDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\HotelDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\HotelDto.cs",
+              "RelativeToolTip": "DTOs\\HotelDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:56:56.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CommonDto.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\CommonDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\CommonDto.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\DTOs\\CommonDto.cs",
+              "RelativeToolTip": "DTOs\\CommonDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:57:04.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-29T16:04:22.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "HotelDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\HotelDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\HotelDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Migrations\\HotelDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\HotelDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:52:34.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:44:13.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAmwBMAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:43:00.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
               "Title": "HotelWebApi",
               "DocumentMoniker": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelWebApi\\HotelWebApi.csproj",
               "RelativeDocumentMoniker": "HotelWebApi.csproj",

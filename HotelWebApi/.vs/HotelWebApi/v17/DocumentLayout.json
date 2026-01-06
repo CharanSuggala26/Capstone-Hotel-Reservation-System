@@ -210,8 +210,7 @@
               "RelativeToolTip": "HotelWebApi.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-01-05T20:03:24.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T20:03:24.459Z"
             },
             {
               "$type": "Document",
@@ -223,8 +222,7 @@
               "RelativeToolTip": "Controllers\\SeasonalRatesController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T20:03:10.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T20:03:10.183Z"
             },
             {
               "$type": "Document",
@@ -236,8 +234,7 @@
               "RelativeToolTip": "Controllers\\HotelsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T18:00:10.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T18:00:10.846Z"
             },
             {
               "$type": "Document",
@@ -249,8 +246,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-29T17:57:35.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T17:57:35.609Z"
             },
             {
               "$type": "Document",
@@ -262,8 +258,7 @@
               "RelativeToolTip": "..\\HotelReservationTesting\\AuthServiceTests.cs",
               "ViewState": "AgIAAHUAAAAAAAAAAAAowAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T19:16:36.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T19:16:36.067Z"
             },
             {
               "$type": "Document",
@@ -273,7 +268,7 @@
               "RelativeDocumentMoniker": "..\\HotelReservationTesting\\ReservationServiceTests.cs",
               "ToolTip": "C:\\Users\\91789\\source\\repos\\Capstone\\HotelReservationTesting\\ReservationServiceTests.cs",
               "RelativeToolTip": "..\\HotelReservationTesting\\ReservationServiceTests.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAkwGAAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAA5wGYAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T13:59:53.964Z",
               "EditorCaption": ""
@@ -288,8 +283,7 @@
               "RelativeToolTip": "Controllers\\RoomsController.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAADwv0wAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T09:45:56.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T09:45:56.893Z"
             },
             {
               "$type": "Document",
@@ -301,8 +295,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:52:57.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:52:57.016Z"
             },
             {
               "$type": "Document",
@@ -314,8 +307,7 @@
               "RelativeToolTip": "Controllers\\BillsController.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAowEQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T10:17:50.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T10:17:50.154Z"
             },
             {
               "$type": "Document",
@@ -327,8 +319,7 @@
               "RelativeToolTip": "Data\\HotelDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:35:02.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:35:02.586Z"
             },
             {
               "$type": "Document",
@@ -340,8 +331,7 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAAAIsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T13:53:43.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T13:53:43.466Z"
             },
             {
               "$type": "Document",
@@ -353,8 +343,7 @@
               "RelativeToolTip": "Data\\DbSeeder.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAAAQwJYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T06:34:23.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T06:34:23.969Z"
             },
             {
               "$type": "Document",
@@ -366,8 +355,7 @@
               "RelativeToolTip": "Controllers\\ReservationsController.cs",
               "ViewState": "AgIAAKUAAAAAAAAAAAAIwIgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T10:17:52.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T10:17:52.616Z"
             },
             {
               "$type": "Document",
@@ -379,8 +367,7 @@
               "RelativeToolTip": "Helpers\\JwtHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:10:28.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T19:10:28.259Z"
             },
             {
               "$type": "Document",
@@ -392,8 +379,7 @@
               "RelativeToolTip": "Middleware\\ExceptionMiddleware.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:57:20.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T19:57:20.701Z"
             },
             {
               "$type": "Document",
@@ -405,8 +391,7 @@
               "RelativeToolTip": "Models\\Reservation.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAowBoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:45:25.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:45:25.816Z"
             },
             {
               "$type": "Document",
@@ -418,8 +403,7 @@
               "RelativeToolTip": "Models\\Notification.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAswBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T18:26:26.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T18:26:26.346Z"
             },
             {
               "$type": "Document",
@@ -431,8 +415,7 @@
               "RelativeToolTip": "Models\\Hotel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:53:27.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:53:27.649Z"
             },
             {
               "$type": "Document",
@@ -444,8 +427,7 @@
               "RelativeToolTip": "Models\\Bill.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAwwBMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:53:20.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:53:20.874Z"
             },
             {
               "$type": "Document",
@@ -457,8 +439,7 @@
               "RelativeToolTip": "Services\\UserService.cs",
               "ViewState": "AgIAANMAAAAAAAAAAADwv6YAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T16:55:15.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-30T16:55:15.497Z"
             },
             {
               "$type": "Document",
@@ -470,8 +451,7 @@
               "RelativeToolTip": "Services\\SeasonalRateService.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAowF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:53:52.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T19:53:52.245Z"
             },
             {
               "$type": "Document",
@@ -483,8 +463,7 @@
               "RelativeToolTip": "Models\\SeasonalRate.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T18:26:59.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T18:26:59.306Z"
             },
             {
               "$type": "Document",
@@ -496,8 +475,7 @@
               "RelativeToolTip": "Models\\Room.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAADwvxYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:53:55.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:53:55.447Z"
             },
             {
               "$type": "Document",
@@ -509,8 +487,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:38:33.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:38:33.411Z"
             },
             {
               "$type": "Document",
@@ -522,8 +499,7 @@
               "RelativeToolTip": "Services\\ReservationService.cs",
               "ViewState": "AgIAAB8BAAAAAAAAAAAUwPgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T09:15:13.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T09:15:13.722Z"
             },
             {
               "$type": "Document",
@@ -535,8 +511,7 @@
               "RelativeToolTip": "Services\\NotificationBackgroundService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:33:30.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T19:33:30.781Z"
             },
             {
               "$type": "Document",
@@ -548,8 +523,7 @@
               "RelativeToolTip": "Services\\BillService.cs",
               "ViewState": "AgIAAJ0AAAAAAAAAAADwv6wAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:17.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:42:17.756Z"
             },
             {
               "$type": "Document",
@@ -561,8 +535,7 @@
               "RelativeToolTip": "Services\\AuthService.cs",
               "ViewState": "AgIAAKcAAAAAAAAAAAAswLUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T19:11:41.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T19:11:41.56Z"
             },
             {
               "$type": "Document",
@@ -574,8 +547,7 @@
               "RelativeToolTip": "Services\\RoomService.cs",
               "ViewState": "AgIAAOcAAAAAAAAAAAAIwPMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:40.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:42:40.263Z"
             },
             {
               "$type": "Document",
@@ -587,8 +559,7 @@
               "RelativeToolTip": "..\\HotelReservationTesting\\RoomServiceTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T14:00:01.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T14:00:01.67Z"
             },
             {
               "$type": "Document",
@@ -600,8 +571,7 @@
               "RelativeToolTip": "Services\\HotelService.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAAAHgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:29.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:42:29.536Z"
             },
             {
               "$type": "Document",
@@ -613,8 +583,7 @@
               "RelativeToolTip": "Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T15:42:35.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T15:42:35.139Z"
             },
             {
               "$type": "Document",

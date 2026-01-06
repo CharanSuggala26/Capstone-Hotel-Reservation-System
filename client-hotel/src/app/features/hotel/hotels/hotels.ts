@@ -89,7 +89,7 @@ export class HotelsComponent implements OnInit {
       error: (error) => {
         this.loading = false;
         this.cdr.detectChanges();
-        console.error('❌ Error loading hotels:', error);
+        console.error('Error loading hotels:', error);
       }
     });
   }
