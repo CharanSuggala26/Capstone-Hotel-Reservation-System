@@ -1,11 +1,13 @@
 # Visual Studio
 .vs/
+**/.vs/
 bin/
 obj/
 **/bin/
 **/obj/
 
-# User-specific
+
+# User-specific files
 *.user
 *.suo
 
