@@ -3,38 +3,53 @@
     <h2>Create Account</h2>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
-        <div class="form-group">
-          <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" formControlName="firstName" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" formControlName="lastName" class="form-control">
-        </div>
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+          <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')">First name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')">Last name is required</mat-error>
+        </mat-form-field>
       </div>
-      
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" class="form-control">
-      </div>
-      
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" formControlName="password" class="form-control">
-      </div>
-      
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number (Optional):</label>
-        <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control">
-      </div>
-      
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6
+          characters</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Phone Number (Optional)</mat-label>
+        <input matInput type="tel" formControlName="phoneNumber">
+      </mat-form-field>
+
       <div *ngIf="error" class="error-message">{{ error }}</div>
-      
-      <button type="submit" [disabled]="registerForm.invalid || loading" class="btn-primary">
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid || loading"
+        class="full-width-btn">
+        <mat-spinner *ngIf="loading" diameter="20"
+          style="display:inline-block; margin-right: 8px; vertical-align: middle;"></mat-spinner>
         {{ loading ? 'Creating Account...' : 'Register' }}
       </button>
     </form>
-    
+
     <p class="login-link">
       Already have an account? <a routerLink="/login">Login here</a>
     </p>

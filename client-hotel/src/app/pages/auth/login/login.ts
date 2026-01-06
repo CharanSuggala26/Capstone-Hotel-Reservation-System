@@ -8,10 +8,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatIconModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
@@ -19,6 +20,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   loading = false;
   error = '';
+  hidePassword = true;
 
   constructor(
     private fb: FormBuilder,
@@ -35,7 +37,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.loading = true;
       this.error = '';
-      
+
       this.authService.login(this.loginForm.value).subscribe({
         next: (response) => {
           this.loading = false;
