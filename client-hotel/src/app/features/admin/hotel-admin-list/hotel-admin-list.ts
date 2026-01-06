@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HotelService } from '../../../services/hotel';
 import { HotelDto } from '../../../models';
-import { Router, RouterModule, RouterLink } from '@angular/router';
+import { RouterModule, RouterLink } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
 
@@ -25,8 +25,8 @@ export class HotelAdminListComponent implements OnInit, AfterViewInit {
     @ViewChild(MatSort) sort!: MatSort;
 
     constructor(
-        private hotelService: HotelService,
-        private cdr: ChangeDetectorRef
+        private readonly hotelService: HotelService,
+        private readonly cdr: ChangeDetectorRef
     ) { }
 
     ngOnInit(): void {
@@ -41,7 +41,7 @@ export class HotelAdminListComponent implements OnInit, AfterViewInit {
         this.hotelService.getHotels().subscribe((response: any) => {
             const hotels = Array.isArray(response) ? response : (response.data || []);
             this.dataSource.data = hotels;
-            this.cdr.detectChanges(); 
+            this.cdr.detectChanges();
         });
     }
 

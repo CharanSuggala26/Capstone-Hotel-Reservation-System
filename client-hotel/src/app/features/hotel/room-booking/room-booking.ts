@@ -50,21 +50,21 @@ export class RoomBookingComponent implements OnInit {
   RoomType = RoomType;
 
   constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private hotelService: HotelService,
-    private reservationService: ReservationService,
-    private cdr: ChangeDetectorRef,
-    private snackBar: MatSnackBar,
-    private auth: AuthService
+    private readonly fb: FormBuilder,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly hotelService: HotelService,
+    private readonly reservationService: ReservationService,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly snackBar: MatSnackBar,
+    private readonly auth: AuthService
   ) {
     this.bookingForm = this.fb.group({
       checkInDate: ['', Validators.required],
       checkOutDate: ['', Validators.required],
       numberOfGuests: [1, [Validators.required, Validators.min(1)]],
       selectedRoomId: ['', Validators.required],
-      guestEmail: [''] 
+      guestEmail: ['']
     });
 
     this.guestForm = this.fb.group({
@@ -88,7 +88,7 @@ export class RoomBookingComponent implements OnInit {
     this.hotelId = +this.route.snapshot.params['id'];
   }
 
-  
+
   private formatDateToApiDate(value: any, isCheckIn: boolean): string {
     const d = value instanceof Date ? value : new Date(value);
     const year = d.getUTCFullYear();
@@ -137,35 +137,38 @@ export class RoomBookingComponent implements OnInit {
         console.warn('Server available API failed, will fallback to client-side', err);
         return of(null);
       })
-    ).subscribe((response: any) => {
-      clearTimeout(loadingTimer);
+    ).subscribe({
+      next: (response: any) => {
+        clearTimeout(loadingTimer);
 
-      let rooms: RoomDto[] = [];
-      if (Array.isArray(response)) {
-        rooms = response;
-      } else if (response?.data && Array.isArray(response.data)) {
-        rooms = response.data;
-      } else {
-        rooms = [];
-      }
+        let rooms: RoomDto[] = [];
+        if (Array.isArray(response)) {
+          rooms = response;
+        } else if (response?.data && Array.isArray(response.data)) {
+          rooms = response.data;
+        } else {
+          rooms = [];
+        }
 
-      console.debug('Availability response (normalized):', rooms);
+        console.debug('Availability response (normalized):', rooms);
 
-      if (rooms.length > 0) {
-        this.availableRooms = rooms;
-        console.debug('Assigned availableRooms (server):', this.availableRooms.length);
+        if (rooms.length > 0) {
+          this.availableRooms = rooms;
+          console.debug('Assigned availableRooms (server):', this.availableRooms.length);
+          this.loading = false;
+          this.cdr.detectChanges();
+          return;
+        }
+
+        console.debug('Server returned no rooms; invoking client-side fallback');
+        this.tryClientSideAvailability(new Date(rawCheckIn), new Date(rawCheckOut));
+      },
+      error: (err) => {
+        clearTimeout(loadingTimer);
+        console.error('Unexpected error in availability call', err);
         this.loading = false;
-        this.cdr.detectChanges();
-        return;
+        this.tryClientSideAvailability(new Date(rawCheckIn), new Date(rawCheckOut));
       }
-
-      console.debug('Server returned no rooms; invoking client-side fallback');
-      this.tryClientSideAvailability(new Date(rawCheckIn), new Date(rawCheckOut));
-    }, (err) => {
-      clearTimeout(loadingTimer);
-      console.error('Unexpected error in availability call', err);
-      this.loading = false;
-      this.tryClientSideAvailability(new Date(rawCheckIn), new Date(rawCheckOut));
     });
   }
 
@@ -184,27 +187,30 @@ export class RoomBookingComponent implements OnInit {
     forkJoin({
       roomsResp: this.hotelService.getRoomsByHotel(this.hotelId).pipe(catchError(() => of([]))),
       reservationsResp: this.reservationService.getReservations().pipe(catchError(() => of([])))
-    }).subscribe(({ roomsResp, reservationsResp }: any) => {
-      clearTimeout(loadingTimer);
+    }).subscribe({
+      next: ({ roomsResp, reservationsResp }: any) => {
+        clearTimeout(loadingTimer);
 
-      const rooms: RoomDto[] = Array.isArray(roomsResp) ? roomsResp : roomsResp?.data || [];
-      const reservations: ReservationDto[] = Array.isArray(reservationsResp) ? reservationsResp : reservationsResp?.data || [];
+        const rooms: RoomDto[] = Array.isArray(roomsResp) ? roomsResp : roomsResp?.data || [];
+        const reservations: ReservationDto[] = Array.isArray(reservationsResp) ? reservationsResp : reservationsResp?.data || [];
 
-      console.debug('Client-side fetched rooms/reservations', { roomsLength: rooms.length, reservationsLength: reservations.length });
+        console.debug('Client-side fetched rooms/reservations', { roomsLength: rooms.length, reservationsLength: reservations.length });
 
-      this.availableRooms = rooms.filter(r =>
-        r.status === RoomStatus.Available &&
-        !this.roomHasOverlap(r.id, reservations, checkInDate, checkOutDate)
-      );
+        this.availableRooms = rooms.filter(r =>
+          r.status === RoomStatus.Available &&
+          !this.roomHasOverlap(r.id, reservations, checkInDate, checkOutDate)
+        );
 
-      console.debug('Assigned availableRooms (client):', this.availableRooms.length);
-      this.loading = false;
-      this.cdr.detectChanges();
-    }, (err) => {
-      clearTimeout(loadingTimer);
-      console.error('Client-side availability fallback error', err);
-      this.loading = false;
-      this.availableRooms = [];
+        console.debug('Assigned availableRooms (client):', this.availableRooms.length);
+        this.loading = false;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        clearTimeout(loadingTimer);
+        console.error('Client-side availability fallback error', err);
+        this.loading = false;
+        this.availableRooms = [];
+      }
     });
   }
 
@@ -242,10 +248,15 @@ export class RoomBookingComponent implements OnInit {
         this.loading = false;
         this.cdr.detectChanges();
 
-        const _possibleReservation = (response?.success === true && response?.data) ? response.data : ((response && typeof response === 'object' && 'id' in response) ? response : null);
+        let _possibleReservation = null;
+        if (response?.success === true && response?.data) {
+          _possibleReservation = response.data;
+        } else if (response && typeof response === 'object' && 'id' in response) {
+          _possibleReservation = response;
+        }
         if (_possibleReservation) {
           const reservation = _possibleReservation;
-          const reservationId = reservation.id;
+          // const reservationId = reservation.id;
 
           const msg = 'Booking request sent! Status: Booked. Please wait for hotel confirmation.';
           this.snackBar.open(msg, 'View Reservations', { duration: 5000 })

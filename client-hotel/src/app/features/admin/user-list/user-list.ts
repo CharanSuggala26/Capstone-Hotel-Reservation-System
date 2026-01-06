@@ -46,9 +46,9 @@ export class UserListComponent implements OnInit, AfterViewInit {
     @ViewChild(MatSort) sort!: MatSort;
 
     constructor(
-        private userService: UserService,
-        private router: Router,
-        private cdr: ChangeDetectorRef
+        private readonly userService: UserService,
+        private readonly router: Router,
+        private readonly cdr: ChangeDetectorRef
     ) { }
 
     ngOnInit(): void {
@@ -63,7 +63,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
         this.userService.getAllUsers(this.pageIndex + 1, this.pageSize, this.filterRole || undefined)
             .subscribe((response: any) => {
                 const data = response.data || response;
-                if (data && data.items) {
+                if (data?.items) {
                     this.dataSource.data = data.items;
                     this.totalUsers = data.totalCount;
                     this.cdr.detectChanges();

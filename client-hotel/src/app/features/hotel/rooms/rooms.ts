@@ -62,20 +62,20 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     { value: RoomStatus.Maintenance, label: 'Maintenance' }
   ];
 
-  private destroy$ = new Subject<void>();
+  private readonly destroy$ = new Subject<void>();
 
-  
+
   filterType: number | null = null;
   filterStatus: number | null = null;
   filterPriceMin: number | null = null;
   filterPriceMax: number | null = null;
 
   constructor(
-    private fb: FormBuilder,
-    private hotelService: HotelService,
-    private auth: AuthService,
-    private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private readonly fb: FormBuilder,
+    private readonly hotelService: HotelService,
+    private readonly auth: AuthService,
+    private readonly route: ActivatedRoute,
+    private readonly snackBar: MatSnackBar
   ) {
     this.roomForm = this.fb.group({
       id: [null],
@@ -102,40 +102,40 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
       return matchType && matchStatus && matchMin && matchMax;
     };
 
- 
+
     const idParam = this.route.snapshot.paramMap.get('id');
     this.hotelIdFromRoute = idParam ? Number(idParam) : null;
     if (this.hotelIdFromRoute) {
       this.roomForm.patchValue({ hotelId: this.hotelIdFromRoute });
     }
 
-    
+
     this.auth.currentUser$
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => {
         this.isAdmin = this.auth.hasRole('Admin');
         this.isManager = this.auth.hasRole('HotelManager');
 
-       
+
         if (this.isManager && (user as any)?.hotelId && !this.hotelIdFromRoute) {
           this.hotelIdFromRoute = (user as any).hotelId;
           this.roomForm.patchValue({ hotelId: this.hotelIdFromRoute });
         }
 
-       
+
         if (this.isAdmin || this.isManager) {
           this.hotelService.getHotels()
             .pipe(takeUntil(this.destroy$))
             .subscribe((res: any) => {
-              const items = (res && res.data) || (Array.isArray(res) ? res : []);
+              const items = res?.data || (Array.isArray(res) ? res : []);
               setTimeout(() => {
                 this.hotels = items;
-                
+
                 if (!this.roomForm.value.hotelId && this.hotels.length === 1) {
                   this.roomForm.patchValue({ hotelId: this.hotels[0].id });
                 }
               });
-              this.reload(); 
+              this.reload();
             });
         } else {
           this.reload();
@@ -149,7 +149,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  
+
   applyCustomFilter(): void {
     this.dataSource.filter = '' + Math.random();
   }
@@ -201,7 +201,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     const value = this.roomForm.value;
     if (this.editing && value.id) {
       this.hotelService.updateRoom(value.id, value).subscribe((res: any) => {
-        if (res?.success !== false) {
+        if (res?.success) {
           this.snackBar.open('Room updated successfully', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -221,7 +221,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
       });
     } else {
       this.hotelService.createRoom(value).subscribe((res: any) => {
-        if (res?.success !== false) {
+        if (res?.success) {
           this.snackBar.open('Room created successfully', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -245,7 +245,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
   deleteRoom(id: number): void {
 
     this.hotelService.deleteRoom(id).subscribe((res: any) => {
-      if (res?.success !== false) {
+      if (res?.success) {
         this.snackBar.open('Room deleted successfully', 'Close', {
           duration: 3000,
           verticalPosition: 'top',
@@ -264,7 +264,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  
+
   onHotelSelectionChange(): void {
     this.reload();
   }
@@ -286,7 +286,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     return this.roomStatuses.find(x => x.value === s)?.label ?? String(s);
   }
 
- 
+
 
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;

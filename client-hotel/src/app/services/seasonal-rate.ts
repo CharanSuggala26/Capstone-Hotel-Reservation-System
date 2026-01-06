@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../models'; 
+import { ApiResponse } from '../models';
 
 export interface SeasonalRateDto {
     id: number;
@@ -24,9 +24,9 @@ export interface CreateSeasonalRateDto {
     providedIn: 'root'
 })
 export class SeasonalRateService {
-    private apiUrl = '/api/SeasonalRates';
+    private readonly apiUrl = '/api/SeasonalRates';
 
-    constructor(private http: HttpClient) { }
+    constructor(private readonly http: HttpClient) { }
 
     getRatesByHotel(hotelId: number): Observable<ApiResponse<SeasonalRateDto[]>> {
         return this.http.get<ApiResponse<SeasonalRateDto[]>>(`${this.apiUrl}/${hotelId}`);

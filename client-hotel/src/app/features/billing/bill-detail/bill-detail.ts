@@ -24,12 +24,12 @@ export class BillDetailComponent implements OnInit {
   PaymentStatus = PaymentStatus;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private reservationService: ReservationService,
-    private authService: AuthService,
-    private cdr: ChangeDetectorRef,
-    private snackBar: MatSnackBar
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly reservationService: ReservationService,
+    private readonly authService: AuthService,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {

@@ -49,11 +49,11 @@ export class SeasonalRatesComponent implements OnInit {
     loading = false;
 
     constructor(
-        private rateService: SeasonalRateService,
-        private hotelService: HotelService,
-        private auth: AuthService,
-        private fb: FormBuilder,
-        private snackBar: MatSnackBar
+        private readonly rateService: SeasonalRateService,
+        private readonly hotelService: HotelService,
+        private readonly auth: AuthService,
+        private readonly fb: FormBuilder,
+        private readonly snackBar: MatSnackBar
     ) {
         this.rateForm = this.fb.group({
             name: ['', Validators.required],
@@ -70,7 +70,7 @@ export class SeasonalRatesComponent implements OnInit {
     loadHotels(): void {
         if (this.auth.hasRole('Admin') || this.auth.hasRole('HotelManager')) {
             this.hotelService.getHotels().subscribe((res: any) => {
-                const items = (res && res.data) || (Array.isArray(res) ? res : []);
+                const items = res?.data || (Array.isArray(res) ? res : []);
                 this.hotels = items;
 
                 // If manager has only one hotel it will auto-selects the hotel

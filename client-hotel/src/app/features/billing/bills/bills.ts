@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
@@ -19,7 +19,7 @@ import { BillDto, PaymentStatus } from '../../../models';
   templateUrl: './bills.html',
   styleUrls: ['./bills.css']
 })
-export class BillsComponent implements OnInit {
+export class BillsComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'userName', 'roomNumber', 'roomCharges', 'additionalCharges', 'taxAmount', 'totalAmount', 'paymentStatus', 'actions'];
   dataSource = new MatTableDataSource<BillDto>();
   loading = false;
@@ -29,10 +29,10 @@ export class BillsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private reservationService: ReservationService,
-    private cdr: ChangeDetectorRef,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private readonly reservationService: ReservationService,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly router: Router,
+    private readonly snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -49,19 +49,19 @@ export class BillsComponent implements OnInit {
     this.reservationService.getBills().subscribe({
       next: (response: any) => {
         this.loading = false;
-        
+
         if (Array.isArray(response)) {
           this.dataSource.data = response;
         }
-        
-        else if (response && response.success && response.data) {
+
+        else if (response?.success && response.data) {
           this.dataSource.data = response.data;
         }
         else {
           this.dataSource.data = [];
         }
 
-       
+
         this.dataSource.data = this.dataSource.data.map(b => ({
           ...b,
           paymentStatus: typeof b.paymentStatus === 'string' ? (PaymentStatus as any)[b.paymentStatus] ?? b.paymentStatus : (b.paymentStatus ?? PaymentStatus.Pending)

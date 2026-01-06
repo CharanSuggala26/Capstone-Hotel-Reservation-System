@@ -9,13 +9,13 @@ import { AuthResponseDto, LoginRequest, RegisterRequest, UserDto } from '../mode
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = '/api/Auth';
-  private currentUserSubject = new BehaviorSubject<UserDto | null>(null);
+  private readonly apiUrl = '/api/Auth';
+  private readonly currentUserSubject = new BehaviorSubject<UserDto | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(
-    private http: HttpClient,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private readonly http: HttpClient,
+    @Inject(PLATFORM_ID) private readonly platformId: Object
   ) {
     console.log('🔧 AuthService initialized');
     this.loadCurrentUser();
@@ -43,7 +43,7 @@ export class AuthService {
       }));
   }
 
- // Receptionist can register a new user (using in Walk-in Bookings)
+  // Receptionist can register a new user (using in Walk-in Bookings)
   registerGuest(userData: RegisterRequest): Observable<AuthResponseDto> {
     return this.http.post<AuthResponseDto>(`${this.apiUrl}/register`, userData);
   }

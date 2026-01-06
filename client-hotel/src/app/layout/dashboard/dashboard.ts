@@ -12,7 +12,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth';
 import { UserService } from '../../services/user';
 import { UserDto, NotificationDto } from '../../models';
-import { interval, Subscription, switchMap, of, filter } from 'rxjs';
+import { interval, Subscription, switchMap, filter } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -38,10 +38,10 @@ export class Dashboard implements OnInit, OnDestroy {
   private pollingSubscription: Subscription | null = null;
 
   constructor(
-    private authService: AuthService,
-    private userService: UserService,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+    private readonly router: Router,
+    private readonly snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -86,9 +86,9 @@ export class Dashboard implements OnInit, OnDestroy {
   handleNewNotifications(newNotifications: NotificationDto[]): void {
     const previousCount = this.notifications.length;
 
-  
+
     if (newNotifications.length > previousCount) {
-      const latestInfo = newNotifications[0]; 
+      const latestInfo = newNotifications[0];
       if (!latestInfo.isRead && !this.notifications.some(n => n.id === latestInfo.id)) {
         this.snackBar.open(latestInfo.message, 'Close', {
           duration: 5000,

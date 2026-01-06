@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { forkJoin, of, timer, Subscription, interval } from 'rxjs';
+import { forkJoin, of, Subscription, interval } from 'rxjs';
 import { catchError, finalize, take } from 'rxjs/operators';
 import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
@@ -9,7 +9,7 @@ import { HotelService } from '../../../services/hotel';
 import { ReservationService } from '../../../services/reservation';
 import { UserService } from '../../../services/user';
 import { AuthService } from '../../../services/auth';
-import { ReservationStatus, PaymentStatus } from '../../../models';
+import { ReservationStatus } from '../../../models';
 
 @Component({
   selector: 'app-reports',
@@ -45,14 +45,14 @@ export class Reports implements OnInit, OnDestroy {
   };
 
   private refreshSubscription: Subscription | null = null;
-  private isBrowser: boolean;
+  private readonly isBrowser: boolean;
 
   constructor(
-    private hotelService: HotelService,
-    private reservationService: ReservationService,
-    private userService: UserService,
-    private authService: AuthService,
-    private cdr: ChangeDetectorRef,
+    private readonly hotelService: HotelService,
+    private readonly reservationService: ReservationService,
+    private readonly userService: UserService,
+    private readonly authService: AuthService,
+    private readonly cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -91,7 +91,7 @@ export class Reports implements OnInit, OnDestroy {
         if (!isBackground) {
           this.loading = false;
         }
-        this.cdr.detectChanges(); 
+        this.cdr.detectChanges();
       })
     ).subscribe((res: any) => {
       this.processData(res);
@@ -168,7 +168,7 @@ export class Reports implements OnInit, OnDestroy {
       this.stats.totalUsers = userResult?.totalCount || 0;
     }
 
-    
+
     const last6Months = [];
     const revenueByMonth = new Array(6).fill(0);
 

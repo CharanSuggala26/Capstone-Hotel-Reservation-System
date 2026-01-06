@@ -7,9 +7,9 @@ import { ApiResponse, PagedResult, UserDetailsDto } from '../models';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = '/api/users';
+  private readonly apiUrl = '/api/users';
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   getAllUsers(page: number = 1, pageSize: number = 10, role?: string): Observable<ApiResponse<PagedResult<UserDetailsDto>>> {
     let params = new HttpParams()

@@ -8,7 +8,6 @@ import { HotelsComponent } from './features/hotel/hotels/hotels';
 import { ReservationsComponent } from './features/reservation/reservations/reservations';
 import { RoomBookingComponent } from './features/hotel/room-booking/room-booking';
 import { authGuard } from './guards/auth-guard';
-import { RoomsComponent } from './features/hotel/rooms/rooms';
 import { Reports } from './features/admin/reports/reports';
 
 import { Welcome } from './pages/welcome/welcome';
