@@ -1,6 +1,8 @@
-# Hotel Management System 
+# Hotel Management System
 
-A modern Angular $ .Net Core application for hotel reservation management with role-based access control.
+A modern **Angular + ASP.NET Core** application for hotel reservation management with secure JWT authentication and role-based access control.
+
+---
 
 ## Features
 
@@ -11,22 +13,42 @@ A modern Angular $ .Net Core application for hotel reservation management with r
 - **Reservation Management**: View and manage bookings
 - **Billing System**: View bills and process payments
 - **Role-Based Dashboard**: Different interfaces for Guest, Receptionist, HotelManager, and Admin
-- **Reccomendation System**: Reccomends Hotels based on previous Reservations
+- **Recommendation System**: Recommends hotels based on previous reservations
 
-### User Roles
+---
+
+## User Roles
+
 - **Guest**: Browse hotels, book rooms, manage reservations, pay bills
 - **Receptionist**: Check-in/out guests, view guest information
 - **HotelManager**: Manage hotels, rooms, and view reports
 - **Admin**: Full system access, user management, role assignment
 
+---
+
 ## Technology Stack
 
-- **Angular 21** - Latest version with standalone components
-- **TypeScript** - Type-safe development
-- **Reactive Forms** - Form handling and validation
-- **HTTP Client** - API communication with interceptors
-- **JWT Authentication** - Secure token-based authentication
-- **CSS** - Custom styling (no SCSS as requested)
+### Frontend
+- **Angular 21** (Standalone Components)
+- **TypeScript**
+- **Reactive Forms**
+- **Angular HTTP Client**
+- **JWT Authentication**
+- **CSS** (No SCSS)
+
+### Backend
+- **ASP.NET Core 8 Web API**
+- **Entity Framework Core**
+- **SQL Server**
+- **JWT Bearer Authentication**
+- **Role-Based Authorization**
+- **AutoMapper**
+- **Swagger / OpenAPI**
+- **Background Hosted Services**
+
+---
+
+ - Custom styling (no SCSS as requested)
 
 
 ## Setup Instructions
@@ -52,6 +74,13 @@ A modern Angular $ .Net Core application for hotel reservation management with r
    ```bash
    ng serve
    ```
+4. **Start backend server**
+   ```
+   cd HotelWebApi
+   dotnet ef database update
+   dotnet run
+   ```
+   
 
 4. **Access the application**
    - Open browser to `http://localhost:4200`
@@ -118,6 +147,7 @@ src/
 
 The application is configured to connect to the backend API at:
 - **Base URL**: `https://localhost:7018`
+- **Swagger URL**:`https://localhost:7018/swagger` (use for API Testing)
 - **Authentication**: JWT tokens stored in localStorage
 - **Interceptor**: Automatically adds Bearer token to requests
 
