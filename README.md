@@ -1,6 +1,6 @@
-# Hotel Management System - Angular Frontend
+# Hotel Management System 
 
-A modern Angular application for hotel reservation management with role-based access control.
+A modern Angular $ .Net Core application for hotel reservation management with role-based access control.
 
 ## Features
 
