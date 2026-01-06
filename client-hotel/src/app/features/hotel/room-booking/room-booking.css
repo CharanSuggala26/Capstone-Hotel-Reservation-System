@@ -40,66 +40,103 @@
   color: #333;
 }
 
+
 .rooms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
   margin-bottom: 2rem;
 }
 
+/* Premium Room Card */
 .room-card {
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .room-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.room-card.selected {
+  border: 2px solid var(--primary-color);
+  background-color: rgba(26, 35, 126, 0.02);
 }
 
 .room-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .room-header h4 {
   margin: 0;
-  color: #333;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .room-details {
   margin-bottom: 1rem;
+  flex: 1;
+  /* Pushes footer down */
 }
 
 .room-details p {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
-  color: #666;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .room-details mat-icon {
-  margin-right: 0.5rem;
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
+  margin-right: 0.75rem;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--primary-light);
+}
+
+.room-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .room-price {
-  font-weight: bold;
-  color: #4caf50 !important;
-  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.4rem;
 }
 
-.room-select {
-  width: 100%;
+.price-period {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.room-radio {
+  transform: scale(1.1);
 }
 
 .booking-actions {
-  text-align: center;
-  padding: 1rem;
+  text-align: right;
+  /* Align right for action */
+  padding: 1.5rem 0;
   border-top: 1px solid #e0e0e0;
 }
 

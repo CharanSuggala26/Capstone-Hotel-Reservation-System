@@ -91,15 +91,29 @@
         <div *ngIf="!loading && availableRooms.length > 0" class="rooms-section">
           <h3>Available Rooms</h3>
           <mat-radio-group formControlName="selectedRoomId" class="rooms-grid">
-            <mat-card *ngFor="let room of availableRooms" class="room-card">
-              <mat-card-content>
+            <mat-card *ngFor="let room of availableRooms" class="room-card"
+              [class.selected]="bookingForm.get('selectedRoomId')?.value === room.id"
+              (click)="bookingForm.get('selectedRoomId')?.setValue(room.id)">
+              <mat-card-content class="flex-column h-100">
                 <div class="room-header">
                   <h4>Room {{ room.roomNumber }}</h4>
                   <mat-chip color="primary" selected>{{ getRoomTypeText(room.type) }}</mat-chip>
                 </div>
-                <p><mat-icon>people</mat-icon> Capacity: {{ room.capacity }}</p>
-                <p>₹ {{ room.basePrice }}/night</p>
-                <mat-radio-button [value]="room.id">Select this room</mat-radio-button>
+
+                <div class="room-details">
+                  <p><mat-icon>people</mat-icon> Capacity: {{ room.capacity }} Guests</p>
+                  <p><mat-icon>wifi</mat-icon> Free High-Speed WiFi</p>
+                  <p><mat-icon>ac_unit</mat-icon> Climate Control</p>
+                </div>
+
+                <div class="room-footer">
+                  <div class="price-container">
+                    <span class="room-price">₹{{ room.basePrice }}</span>
+                    <span class="price-period">/night</span>
+                  </div>
+                  <mat-radio-button [value]="room.id" class="room-radio"
+                    (click)="$event.stopPropagation()">Select</mat-radio-button>
+                </div>
               </mat-card-content>
             </mat-card>
           </mat-radio-group>

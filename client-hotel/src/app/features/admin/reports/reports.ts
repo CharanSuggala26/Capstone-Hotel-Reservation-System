@@ -137,29 +137,45 @@ export class Reports implements OnInit, OnDestroy {
     ).length;
 
     // Calculating Occupancy based on date overlap and active status (Booked, Confirmed, CheckedIn)
+    // Calculating Occupancy based on date overlap and active status
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const occupiedRooms = reservations.filter((r: any) => {
+    // Get unique occupied room IDs to prevent double counting
+    const occupiedRoomIds = new Set<number>();
+
+    reservations.forEach((r: any) => {
       const status = r.status;
-      const isActive =
-        status === ReservationStatus.Booked || status === 1 ||
-        status === ReservationStatus.Confirmed || status === 2 ||
-        status === ReservationStatus.CheckedIn || status === 3;
 
-      if (!isActive) return false;
+      // 1. If explicitly Checked In, the room is occupied right now (regardless of dates)
+      if (status === ReservationStatus.CheckedIn || status === 3) {
+        occupiedRoomIds.add(r.roomId);
+        return;
+      }
 
-      const checkIn = new Date(r.checkInDate);
-      const checkOut = new Date(r.checkOutDate);
-      // Normalizing the dates to compare only days
-      checkIn.setHours(0, 0, 0, 0);
-      checkOut.setHours(0, 0, 0, 0);
+      // 2. If Booked/Confirmed, check if we are currently within the window
+      const isBookedOrConfirmed = status === ReservationStatus.Booked || status === 1 ||
+        status === ReservationStatus.Confirmed || status === 2;
 
-      // Occupied if today is within [checkIn, checkOut]
-      return today >= checkIn && today < checkOut;
-    }).length;
+      if (isBookedOrConfirmed) {
+        const checkIn = new Date(r.checkInDate);
+        const checkOut = new Date(r.checkOutDate);
 
-    this.stats.occupancyRate = Math.round((occupiedRooms / totalRooms) * 100);
+        // Normalize
+        checkIn.setHours(0, 0, 0, 0);
+        checkOut.setHours(0, 0, 0, 0);
+
+        // Occupied if today is strictly inside residence period [CheckIn, CheckOut)
+        if (today >= checkIn && today < checkOut) {
+          occupiedRoomIds.add(r.roomId);
+        }
+      }
+    });
+
+    const occupiedCount = occupiedRoomIds.size;
+    const occupancyRate = totalRooms > 0 ? (occupiedCount / totalRooms) * 100 : 0;
+
+    this.stats.occupancyRate = Math.round(occupancyRate);
 
     if (this.authService.hasRole('HotelManager')) {
       // For Hotel Manager, count unique guests who have reservations at this hotel

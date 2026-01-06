@@ -1,19 +1,142 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import './global-overrides.css';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  /* Brand Palette - Charan Hotels (Refined) */
+  --primary-color: #1a237e;
+  /* Deep Indigo - Keep as strong accent */
+  --primary-light: #534bae;
+  --primary-soft: rgba(26, 35, 126, 0.08);
+  /* For backgrounds */
+
+  --secondary-color: #ff6f00;
+  /* Amber Accent */
+
+  /* Neutral Palette - Clean & Tech */
+  --bg-color: #f8f9fa;
+  /* Very Light Gray (Bootstrap-like) */
+  --surface-color: #ffffff;
+
+  --text-primary: #202124;
+  /* Google Gray 900 */
+  --text-secondary: #5f6368;
+  /* Google Gray 700 */
+  --text-tertiary: #bdc1c6;
+
+  /* Shadows - Diffuse & Premium */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  /* Softer */
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  /* Float */
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  /* Lift */
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
 }
 
 body {
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Prefer Inter if available */
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }
 
+/* Global Layout Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: -1px;
+  /* tight tracking for modern feel */
+}
+
+/* Premium Card - Universal */
+.content-card {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Material Overrides for Modern Look */
+
+/* Flat Buttons with Soft Radius */
+button.mat-mdc-raised-button.mat-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  /* Pill buttons strictly */
+  padding: 0 2rem !important;
+  height: 44px !important;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.2) !important;
+  letter-spacing: 0.2px;
+}
+
+button.mat-mdc-raised-button.mat-primary:hover {
+  box-shadow: 0 6px 16px rgba(26, 35, 126, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+/* Stroked Buttons */
+button.mat-mdc-outlined-button {
+  border-radius: 50px !important;
+  border-color: #dadce0 !important;
+  color: var(--text-primary) !important;
+  height: 44px !important;
+  padding: 0 1.5rem !important;
+}
+
+/* Form Fields - Less Boxy */
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: #dadce0;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-flex {
+  background-color: white;
+  /* clearer inputs */
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+/* Snack Bar */
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: #202124 !important;
+  border-radius: 8px !important;
+  box-shadow: var(--shadow-lg) !important;
 }

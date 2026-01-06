@@ -1,29 +1,31 @@
-
 .bills-container {
   max-width: 1200px;
   width: 95%;
   margin: 2rem auto;
-  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', 'Inter', sans-serif;
 }
 
 mat-card {
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md) !important;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--surface-color);
+  border: none;
 }
 
 mat-card-header {
-  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%);
-  color: white;
-  padding: 1.5rem 1.5rem 1rem;
+  background: white;
+  /* Clean header */
+  color: var(--primary-color);
+  padding: 1.5rem 2rem;
   margin-bottom: 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 mat-card-title {
   font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 mat-card-content {
@@ -37,7 +39,7 @@ mat-card-content {
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .loading-container mat-spinner {
@@ -52,12 +54,12 @@ mat-card-content {
 }
 
 .bills-table th.mat-mdc-header-cell {
-  background-color: #f5f7fa;
-  color: #546e7a;
+  background-color: #fafafa;
+  color: var(--text-secondary);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
   padding: 1.25rem 1rem;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -65,12 +67,13 @@ mat-card-content {
 .bills-table td.mat-mdc-cell {
   padding: 1rem;
   font-size: 0.95rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   border-bottom: 1px solid #f0f0f0;
 }
 
 .bills-table tr.mat-mdc-row:hover {
-  background-color: #f8f9fa;
+  background-color: rgba(26, 35, 126, 0.02);
+  /* var(--primary-color) very faint */
   transition: background-color 0.2s ease;
 }
 
@@ -81,24 +84,24 @@ mat-card-content {
 
 .mat-column-id {
   font-weight: 500;
-  color: #3f51b5;
+  color: var(--primary-light);
   width: 80px;
 }
 
 .mat-column-totalAmount {
   font-weight: 700;
-  color: #2e7d32;
- 
+  color: var(--text-primary);
 }
 
 
 .mat-mdc-chip {
   min-height: 24px !important;
-  font-size: 0.8rem !important;
-  font-weight: 500;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-
+/* Status Colors - Refined */
 .status-paid {
   background-color: #e8f5e9 !important;
   color: #2e7d32 !important;
@@ -106,31 +109,40 @@ mat-card-content {
 }
 
 .status-pending {
-  background-color: #ffebee !important;
-  color: #c62828 !important;
-  border: 1px solid #ffcdd2 !important;
+  background-color: #fff3e0 !important;
+  /* Warning/Pending Color */
+  color: #ef6c00 !important;
+  border: 1px solid #ffe0b2 !important;
 }
 
 .status-refunded {
-  background-color: #fff3e0 !important;
-  color: #ef6c00 !important;
-  border: 1px solid #ffe0b2 !important;
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+  border: 1px solid #ffcdd2 !important;
 }
 
 
 .mat-column-actions {
   width: 140px;
   text-align: right;
+  padding-right: 24px !important;
 }
 
 button[mat-raised-button] {
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: none !important;
+  /* Flat buttons in table usually look better */
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
 }
 
+button[mat-raised-button]:hover {
+  background: var(--primary-dark);
+}
 
 .no-data {
   display: flex;
@@ -138,7 +150,7 @@ button[mat-raised-button] {
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  color: #90a4ae;
+  color: var(--text-secondary);
   background-color: #fff;
 }
 
@@ -147,7 +159,7 @@ button[mat-raised-button] {
   width: 64px;
   height: 64px;
   margin-bottom: 1rem;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .no-data p {
@@ -158,12 +170,13 @@ button[mat-raised-button] {
 
 .no-data .hint {
   font-size: 0.9rem;
-  color: #b0bec5;
+  color: #909090;
   max-width: 400px;
   text-align: center;
   line-height: 1.5;
 }
 
 mat-paginator {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #f0f0f0;
+  background: white !important;
 }

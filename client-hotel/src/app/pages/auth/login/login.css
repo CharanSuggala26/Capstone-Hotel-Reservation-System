@@ -1,37 +1,151 @@
+/* Global centered flex container */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 1rem;
+  /* Background Image Setup */
+  background-color: #1a1a2e;
+  /* Fallback dark color */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/assets/login-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+/* Glassmorphism / Modern Card Style */
 .login-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
+  padding: 2rem !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  /* High opacity for readability */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  /* Deep shadow for depth */
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
 }
 
+/* Card Header Stylings */
+.mat-mdc-card-header {
+  padding: 0 0 1.5rem 0;
+  justify-content: center;
+}
+
+mat-card-title {
+  font-size: 1.8rem !important;
+  font-weight: 500 !important;
+  color: #1a237e;
+  /* Deep Blue/Indigo */
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Fields */
 .full-width {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
+/* Material Form Field Customization */
+::ng-deep .mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+::ng-deep .mat-mdc-form-field-appearance-outline.mat-focused .mat-mdc-form-field-outline-thick {
+  color: #1a237e;
+}
+
+/* Button Styling */
+button[mat-raised-button] {
+  margin-top: 2rem;
+  min-height: 52px !important;
+  padding: 0 32px !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+  box-shadow: 0 8px 20px rgba(26, 35, 126, 0.25);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
+  letter-spacing: 0.5px;
+  /* Reset flex to avoid conflict with MDC internals, handled by global-overrides if needed or natural MDC behavior */
+  display: inline-block;
+}
+
+/* Specific fix ensuring the label is centered if MDC flex fails */
+::ng-deep .login-card button[mat-raised-button] .mdc-button__label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+  height: 100%;
+}
+
+button[mat-raised-button]:not([disabled]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.4);
+}
+
+button[mat-raised-button]:disabled {
+  background: #e0e0e0;
+}
+
+/* Error Message */
 .error-message {
-  color: #f44336;
-  font-size: 0.875rem;
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.1);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
   text-align: center;
+  border-left: 4px solid #d32f2f;
 }
 
-button[mat-raised-button] {
-  margin-top: 1rem;
-}
-
-mat-spinner {
-  margin-right: 8px;
-}
-
+/* Footer Actions */
 .center-actions {
   text-align: center;
   width: 100%;
+  margin-top: 1rem;
+}
+
+.center-actions p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.center-actions a {
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* Loading Spinner fix */
+mat-spinner {
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
