@@ -10,7 +10,7 @@
     </mat-card-header>
 
     <mat-card-content>
-     
+
       <div class="toolbar-row">
         <mat-form-field appearance="outline" class="search-field">
           <mat-label>Search Hotels</mat-label>
@@ -40,7 +40,7 @@
               <mat-card-subtitle>{{ room.hotelName }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-              <p class="price-highlight">${{ room.basePrice }} / night</p>
+              <p class="price-highlight">₹{{ room.basePrice }} / night</p>
               <p>Capacity: {{ room.capacity }} Guests</p>
             </mat-card-content>
             <mat-card-actions align="end">
@@ -54,7 +54,7 @@
         <mat-divider style="margin: 20px 0;"></mat-divider>
       </div>
 
-      
+
       <div *ngIf="!loading && filteredHotels.length > 0" class="hotel-grid">
         <mat-card *ngFor="let hotel of filteredHotels" class="hotel-card">
           <div class="card-header-image">
@@ -69,7 +69,7 @@
             <p *ngIf="hotel.phone"><mat-icon inline>phone</mat-icon> {{ hotel.phone }}</p>
             <p *ngIf="hotel.email"><mat-icon inline>email</mat-icon> {{ hotel.email }}</p>
             <p class="rooms-badge">{{ hotel.totalRooms }} Rooms</p>
-            
+
           </mat-card-content>
 
           <mat-card-actions align="end">

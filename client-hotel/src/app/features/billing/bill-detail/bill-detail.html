@@ -6,10 +6,10 @@
     </mat-card-header>
 
     <mat-card-content>
-      <p><strong>Room Charges:</strong> ${{ bill.roomCharges }}</p>
-      <p><strong>Additional Charges:</strong> ${{ bill.additionalCharges }}</p>
-      <p><strong>Tax:</strong> ${{ bill.taxAmount }}</p>
-      <p class="total"><strong>Total:</strong> ${{ bill.totalAmount }}</p>
+      <p><strong>Room Charges:</strong> ₹{{ bill.roomCharges }}</p>
+      <p><strong>Additional Charges:</strong> ₹{{ bill.additionalCharges }}</p>
+      <p><strong>Tax:</strong> ₹{{ bill.taxAmount }}</p>
+      <p class="total"><strong>Total:</strong> ₹{{ bill.totalAmount }}</p>
 
       <mat-chip [class.status-paid]="bill!.paymentStatus === PaymentStatus.Paid"
         [class.status-pending]="bill!.paymentStatus === PaymentStatus.Pending"

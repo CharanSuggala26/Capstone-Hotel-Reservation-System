@@ -101,7 +101,7 @@
                   <mat-chip color="primary" selected>{{ getRoomTypeText(room.type) }}</mat-chip>
                 </div>
                 <p><mat-icon>people</mat-icon> Capacity: {{ room.capacity }}</p>
-                <p><mat-icon>attach_money</mat-icon> {{ room.basePrice }}/night</p>
+                <p>₹ {{ room.basePrice }}/night</p>
                 <mat-radio-button [value]="room.id">Select this room</mat-radio-button>
               </mat-card-content>
             </mat-card>
