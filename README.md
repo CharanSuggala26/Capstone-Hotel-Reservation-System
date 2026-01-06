@@ -2,7 +2,7 @@
 
 A modern **Angular + ASP.NET Core** application for hotel reservation management with secure JWT authentication and role-based access control.
 
----
+
 
 ## Features
 
@@ -15,7 +15,7 @@ A modern **Angular + ASP.NET Core** application for hotel reservation management
 - **Role-Based Dashboard**: Different interfaces for Guest, Receptionist, HotelManager, and Admin
 - **Recommendation System**: Recommends hotels based on previous reservations
 
----
+
 
 ## User Roles
 
@@ -24,7 +24,7 @@ A modern **Angular + ASP.NET Core** application for hotel reservation management
 - **HotelManager**: Manage hotels, rooms, and view reports
 - **Admin**: Full system access, user management, role assignment
 
----
+
 
 ## Technology Stack
 
@@ -45,10 +45,7 @@ A modern **Angular + ASP.NET Core** application for hotel reservation management
 - **AutoMapper**
 - **Swagger / OpenAPI**
 - **Background Hosted Services**
-
----
-
- - Custom styling (no SCSS as requested)
+-  Custom styling (no SCSS as requested)
 
 
 ## Setup Instructions
