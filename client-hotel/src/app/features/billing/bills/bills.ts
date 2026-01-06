@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import jsPDF from 'jspdf';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
@@ -111,5 +112,104 @@ export class BillsComponent implements OnInit, AfterViewInit {
 
   goToBill(billId: number): void {
     this.router.navigate(['/dashboard/bills', billId]);
+  }
+
+  isPaid(bill: BillDto): boolean {
+    if (!bill) return false;
+    return bill.paymentStatus === PaymentStatus.Paid ||
+      (bill.paymentStatus as any) === 2 ||
+      (bill.paymentStatus as any) === 'Paid';
+  }
+
+  downloadInvoice(bill: BillDto): void {
+    const doc = new jsPDF();
+    const margin = 20;
+    let y = 20;
+
+    // Header
+    doc.setFontSize(24);
+    doc.setTextColor(40, 40, 40);
+    doc.text('Charan Hotels', margin, y);
+    y += 10;
+
+    // Sub-header (Specific Hotel Name)
+    if (bill.hotelName) {
+      doc.setFontSize(14);
+      doc.setTextColor(100, 100, 100);
+      doc.text(bill.hotelName, margin, y);
+      y += 10;
+    }
+
+    doc.setFontSize(16);
+    doc.setTextColor(60, 60, 60);
+    doc.text('INVOICE', margin, y);
+    y += 15;
+
+    // Bill Details Box
+    doc.setFillColor(245, 245, 245);
+    doc.rect(margin, y - 5, 170, 45, 'F');
+
+    // Bill Info
+    doc.setFontSize(11);
+    doc.setTextColor(80, 80, 80);
+    doc.text(`Bill ID: #${bill.id}`, margin, y);
+    y += 7;
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, margin, y);
+    y += 7;
+    doc.text(`Guest: ${bill.userName}`, margin, y);
+    y += 7;
+    doc.text(`Room: ${bill.roomNumber}`, margin, y);
+    y += 15;
+
+    // Divider
+    doc.setDrawColor(200, 200, 200);
+    doc.line(margin, y, 190, y);
+    y += 10;
+
+    // details
+    doc.setFontSize(14);
+    doc.setTextColor(0, 0, 0);
+
+    doc.text('Description', margin, y);
+    doc.text('Amount', 150, y);
+    y += 10;
+
+    doc.setFontSize(12);
+    doc.setTextColor(60, 60, 60);
+
+    // Items
+    doc.text('Room Charges', margin, y);
+    doc.text(`$${bill.roomCharges}`, 150, y);
+    y += 8;
+
+    doc.text('Additional Charges', margin, y);
+    doc.text(`$${bill.additionalCharges}`, 150, y);
+    y += 8;
+
+    doc.text('Tax', margin, y);
+    doc.text(`$${bill.taxAmount}`, 150, y);
+    y += 12;
+
+    // Total
+    doc.setDrawColor(0, 0, 0);
+    doc.line(margin, y, 190, y);
+    y += 10;
+
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Total Amount', margin, y);
+    doc.text(`$${bill.totalAmount}`, 150, y);
+
+    y += 15;
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+
+    const status = this.getPaymentStatusText(bill.paymentStatus);
+    doc.setTextColor(status === 'Paid' ? 'green' : 'red');
+    doc.text(`Status: ${status}`, margin, y);
+
+    // Save
+    doc.save(`Invoice_Bill_${bill.id}.pdf`);
   }
 }

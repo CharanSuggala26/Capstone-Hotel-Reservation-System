@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { forkJoin } from 'rxjs';
 
 import { UserService } from '../../../services/user';
 import { HotelService } from '../../../services/hotel';
@@ -54,9 +55,14 @@ export class AssignHotel implements OnInit {
   }
 
   loadUsers(): void {
-    this.userService.getAllUsers(1, 100).subscribe({
-      next: (res) => {
-        this.users = res.data?.items || [];
+    const receptionists$ = this.userService.getAllUsers(1, 100, 'Receptionist');
+    const managers$ = this.userService.getAllUsers(1, 100, 'HotelManager');
+
+    forkJoin([receptionists$, managers$]).subscribe({
+      next: ([recepRes, mgrRes]) => {
+        const receptionists = recepRes.data?.items || [];
+        const managers = mgrRes.data?.items || [];
+        this.users = [...receptionists, ...managers];
         this.cdr.detectChanges();
       },
       error: (err) => console.error('User load error', err)

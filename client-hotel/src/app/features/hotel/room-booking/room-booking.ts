@@ -102,6 +102,12 @@ export class RoomBookingComponent implements OnInit {
     const ci = this.bookingForm.get('checkInDate')?.value;
     const co = this.bookingForm.get('checkOutDate')?.value;
     if (!ci || !co || !this.hotelId) return true;
+
+    // For Receptionist, search is enabled only after providing a guest email (e.g. via registration)
+    if (this.hasRole('Receptionist') && !this.bookingForm.get('guestEmail')?.value) {
+      return true;
+    }
+
     return new Date(co) <= new Date(ci);
   }
 
@@ -155,8 +161,10 @@ export class RoomBookingComponent implements OnInit {
         if (rooms.length > 0) {
           this.availableRooms = rooms;
           console.debug('Assigned availableRooms (server):', this.availableRooms.length);
-          this.loading = false;
-          this.cdr.detectChanges();
+          setTimeout(() => {
+            this.loading = false;
+            this.cdr.detectChanges();
+          });
           return;
         }
 
@@ -203,7 +211,6 @@ export class RoomBookingComponent implements OnInit {
 
         console.debug('Assigned availableRooms (client):', this.availableRooms.length);
         this.loading = false;
-        this.cdr.detectChanges();
       },
       error: (err) => {
         clearTimeout(loadingTimer);
@@ -224,6 +231,17 @@ export class RoomBookingComponent implements OnInit {
   }
 
   bookRoom(): void {
+    // Receptionist specific check
+    if (this.hasRole('Receptionist') && !this.bookingForm.get('guestEmail')?.value) {
+      this.snackBar.open('Register the guest and booking failed', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+        panelClass: ['error-snackbar']
+      });
+      return;
+    }
+
     if (!this.bookingForm.valid) { this.snackBar.open('Please fill all required fields and select a room.', 'OK', { duration: 4000 }); return; }
 
     const selectedRoomId = this.bookingForm.get('selectedRoomId')?.value;
@@ -239,14 +257,14 @@ export class RoomBookingComponent implements OnInit {
       guestEmail: this.bookingForm.get('guestEmail')?.value || null
     };
 
+    const isReceptionist = this.hasRole('Receptionist');
+
     console.debug('Attempting booking with payload:', booking);
 
     this.loading = true;
-    this.cdr.detectChanges();
     this.reservationService.createReservation(booking).subscribe({
       next: (response: any) => {
         this.loading = false;
-        this.cdr.detectChanges();
 
         let _possibleReservation = null;
         if (response?.success === true && response?.data) {
@@ -256,13 +274,19 @@ export class RoomBookingComponent implements OnInit {
         }
         if (_possibleReservation) {
           const reservation = _possibleReservation;
-          // const reservationId = reservation.id;
 
-          const msg = 'Booking request sent! Status: Booked. Please wait for hotel confirmation.';
-          this.snackBar.open(msg, 'View Reservations', { duration: 5000 })
-            .onAction().subscribe(() => this.router.navigate(['/dashboard/reservations']));
+          // If Receptionist, process payment immediately (Pay at Hotel) as they collect cash offline
+          const isReceptionist = this.hasRole('Receptionist');
+          if (isReceptionist && reservation.id) {
+            this.processPayAtHotel(reservation.id, reservation.totalAmount || 0);
+          } else {
+            // Standard booking flow (Payment is handled after Check-In/Check-Out)
+            const msg = 'Booking request sent! Status: Booked. Please wait for hotel confirmation.';
+            this.snackBar.open(msg, 'View Reservations', { duration: 5000 })
+              .onAction().subscribe(() => this.router.navigate(['/dashboard/reservations']));
 
-          setTimeout(() => this.router.navigate(['/dashboard/reservations']), 1500);
+            setTimeout(() => this.router.navigate(['/dashboard/reservations']), 1500);
+          }
 
         } else {
           const msg = response?.message || (Array.isArray(response?.errors) ? response.errors.join('; ') : 'Booking failed.');
@@ -274,7 +298,6 @@ export class RoomBookingComponent implements OnInit {
         const serverMessage = err?.error?.message || (err?.error?.errors && Array.isArray(err.error.errors) ? err.error.errors.join('; ') : null);
         console.error('Booking failed (network/error):', err, serverMessage);
         this.loading = false;
-        this.cdr.detectChanges();
         setTimeout(() => this.snackBar.open(serverMessage || 'Booking failed. Please try again.', 'OK', { duration: 7000 }), 0);
       }
     });
@@ -314,6 +337,42 @@ export class RoomBookingComponent implements OnInit {
         this.loading = false;
         const msg = err.error?.message || 'Registration failed';
         this.snackBar.open(msg, 'OK', { duration: 5000 });
+      }
+    });
+  }
+
+  processPayAtHotel(reservationId: number, amount: number): void {
+    const billData = {
+      reservationId: reservationId,
+      roomCharges: amount,
+      additionalCharges: 0,
+      taxAmount: 0 // Backend calculates tax usually, but sending 0 as placeholder
+    };
+
+    this.reservationService.createBill(billData).subscribe({
+      next: (billRes: any) => {
+        const bill = billRes.data || billRes;
+        if (bill && bill.id) {
+          this.reservationService.processPayment(bill.id, amount).subscribe({
+            next: (payRes) => {
+              this.snackBar.open('Walk-in Booking Complete. Payment Received (Cash).', 'Close', {
+                duration: 5000,
+                panelClass: ['success-snackbar']
+              });
+              setTimeout(() => this.router.navigate(['/dashboard/reservations']), 2000);
+            },
+            error: (err) => {
+              console.error('Payment failed', err);
+              this.snackBar.open('Booking success, but Payment failed to record.', 'OK', { duration: 5000 });
+              this.router.navigate(['/dashboard/reservations']);
+            }
+          });
+        }
+      },
+      error: (err) => {
+        console.error('Bill creation failed', err);
+        this.snackBar.open('Booking success, but Bill creation failed.', 'OK', { duration: 5000 });
+        this.router.navigate(['/dashboard/reservations']);
       }
     });
   }

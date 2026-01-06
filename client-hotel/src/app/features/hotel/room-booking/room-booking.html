@@ -42,6 +42,9 @@
               <mat-icon>search</mat-icon>
               Search Rooms
             </button>
+            <p *ngIf="hasRole('Receptionist') && !bookingForm.get('guestEmail')?.value" class="warning-text">
+              <mat-icon inline>info</mat-icon> Please register a guest to enable search.
+            </p>
 
             <button *ngIf="isStaff" mat-stroked-button color="accent" type="button" (click)="toggleRegisterGuest()">
               <mat-icon>person_add</mat-icon>
@@ -109,7 +112,9 @@
           </div>
         </div>
 
-        <div *ngIf="!loading && availableRooms.length === 0 && bookingForm.value.checkInDate">
+        <div
+          *ngIf="!loading && availableRooms.length === 0 && (bookingForm.touched || bookingForm.dirty) && bookingForm.valid"
+          class="no-rooms-message">
           <mat-icon>hotel</mat-icon>
           <p>No rooms available for selected dates.</p>
         </div>

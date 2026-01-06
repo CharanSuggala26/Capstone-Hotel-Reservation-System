@@ -155,3 +155,23 @@
 .search-actions button mat-icon {
   margin-right: 8px;
 }
+
+.warning-text {
+  color: #f44336;
+  /* Red color for visibility */
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.no-rooms-message {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}

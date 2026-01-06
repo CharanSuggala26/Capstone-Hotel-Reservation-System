@@ -60,6 +60,8 @@ export interface BillDto {
   reservationId: number;
   userName: string;
   roomNumber: string;
+  hotelName?: string;
+  hotelId?: number;
 }
 
 export interface NotificationDto {

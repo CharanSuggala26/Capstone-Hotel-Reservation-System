@@ -70,7 +70,15 @@ export class SeasonalRatesComponent implements OnInit {
     loadHotels(): void {
         if (this.auth.hasRole('Admin') || this.auth.hasRole('HotelManager')) {
             this.hotelService.getHotels().subscribe((res: any) => {
-                const items = res?.data || (Array.isArray(res) ? res : []);
+                let items = res?.data || (Array.isArray(res) ? res : []);
+
+                if (this.auth.hasRole('HotelManager')) {
+                    const user = this.auth.getCurrentUser();
+                    if (user?.hotelId) {
+                        items = items.filter((h: any) => h.id === user.hotelId);
+                    }
+                }
+
                 this.hotels = items;
 
                 // If manager has only one hotel it will auto-selects the hotel

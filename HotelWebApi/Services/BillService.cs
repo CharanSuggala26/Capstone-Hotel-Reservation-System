@@ -33,7 +33,9 @@ public class BillService : IBillService
                 PaidAt = b.PaidAt,
                 ReservationId = b.ReservationId,
                 UserName = b.Reservation.User.UserName ?? "",
-                RoomNumber = b.Reservation.Room.RoomNumber
+                RoomNumber = b.Reservation.Room.RoomNumber,
+                HotelName = b.Reservation.Room.Hotel.Name,
+                HotelId = b.Reservation.Room.HotelId
             })
             .ToListAsync();
     }
@@ -58,7 +60,9 @@ public class BillService : IBillService
                 PaidAt = b.PaidAt,
                 ReservationId = b.ReservationId,
                 UserName = b.Reservation.User.UserName ?? "",
-                RoomNumber = b.Reservation.Room.RoomNumber
+                RoomNumber = b.Reservation.Room.RoomNumber,
+                HotelName = b.Reservation.Room.Hotel.Name,
+                HotelId = b.Reservation.Room.HotelId
             })
             .ToListAsync();
     }
@@ -70,6 +74,7 @@ public class BillService : IBillService
             .ThenInclude(r => r.User)
             .Include(b => b.Reservation)
             .ThenInclude(r => r.Room)
+            .ThenInclude(rm => rm.Hotel)
             .FirstOrDefaultAsync(b => b.Id == id);
 
         if (bill == null) return null;
@@ -86,7 +91,9 @@ public class BillService : IBillService
             PaidAt = bill.PaidAt,
             ReservationId = bill.ReservationId,
             UserName = bill.Reservation.User.UserName ?? "",
-            RoomNumber = bill.Reservation.Room.RoomNumber
+            RoomNumber = bill.Reservation.Room.RoomNumber,
+            HotelName = bill.Reservation.Room.Hotel.Name,
+            HotelId = bill.Reservation.Room.HotelId
         };
     }
 

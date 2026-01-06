@@ -127,7 +127,17 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
           this.hotelService.getHotels()
             .pipe(takeUntil(this.destroy$))
             .subscribe((res: any) => {
-              const items = res?.data || (Array.isArray(res) ? res : []);
+              let items = res?.data || (Array.isArray(res) ? res : []);
+
+              if (this.isManager) {
+                const userHotelId = (user as any)?.hotelId;
+                if (userHotelId) {
+                  items = items.filter((h: any) => h.id === userHotelId);
+                  this.hotelIdFromRoute = userHotelId;
+                  this.roomForm.patchValue({ hotelId: userHotelId });
+                }
+              }
+
               setTimeout(() => {
                 this.hotels = items;
 

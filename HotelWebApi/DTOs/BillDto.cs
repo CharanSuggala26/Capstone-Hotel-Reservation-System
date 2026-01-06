@@ -16,6 +16,8 @@ public class BillDto
     public int ReservationId { get; set; }
     public string UserName { get; set; } = string.Empty;
     public string RoomNumber { get; set; } = string.Empty;
+    public string HotelName { get; set; } = string.Empty;
+    public int HotelId { get; set; }
 }
 
 public class CreateBillDto

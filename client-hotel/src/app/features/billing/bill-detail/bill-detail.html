@@ -28,6 +28,12 @@
       <button mat-raised-button color="warn" (click)="cancel()" *ngIf="bill.paymentStatus === PaymentStatus.Pending">
         Cancel
       </button>
+
+      <!-- Download Invoice Button (Visible only after payment) -->
+      <button mat-stroked-button color="primary" (click)="downloadInvoice()" *ngIf="isPaid()">
+        <mat-icon>download</mat-icon>
+        Download Invoice
+      </button>
     </mat-card-actions>
   </mat-card>
 

@@ -62,9 +62,15 @@
             <th mat-header-cell *matHeaderCellDef>Actions</th>
             <td mat-cell *matCellDef="let bill">
               <button *ngIf="bill.paymentStatus === PaymentStatus.Pending" mat-raised-button color="primary"
-                (click)="goToBill(bill.id)">
+                (click)="goToBill(bill.id)" class="action-btn">
                 <mat-icon>payment</mat-icon>
                 Pay Now
+              </button>
+
+              <button *ngIf="isPaid(bill)" mat-stroked-button color="primary" (click)="downloadInvoice(bill)"
+                class="action-btn">
+                <mat-icon>download</mat-icon>
+                Invoice
               </button>
             </td>
           </ng-container>

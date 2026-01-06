@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -41,7 +41,8 @@ export class Dashboard implements OnInit, OnDestroy {
     private readonly authService: AuthService,
     private readonly userService: UserService,
     private readonly router: Router,
-    private readonly snackBar: MatSnackBar
+    private readonly snackBar: MatSnackBar,
+    private readonly cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -120,6 +121,7 @@ export class Dashboard implements OnInit, OnDestroy {
 
   updateUnreadCount(): void {
     this.unreadCount = this.notifications.filter(n => !n.isRead).length;
+    this.cdr.detectChanges();
   }
 
   markAsRead(notification: NotificationDto): void {
