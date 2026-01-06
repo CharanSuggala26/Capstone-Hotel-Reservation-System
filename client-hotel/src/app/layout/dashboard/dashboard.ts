@@ -63,7 +63,7 @@ export class Dashboard implements OnInit, OnDestroy {
   startPolling(): void {
     this.stopPolling();
 
-    // Poll every 30 seconds
+    // Poll every 30 seconds for Background service message notifictaions
     this.pollingSubscription = interval(30000).pipe(
       filter(() => !!this.currentUser),
       switchMap(() => this.userService.getNotifications(this.currentUser!.id))
@@ -86,13 +86,9 @@ export class Dashboard implements OnInit, OnDestroy {
   handleNewNotifications(newNotifications: NotificationDto[]): void {
     const previousCount = this.notifications.length;
 
-    // Check for truly new notifications (by ID) which are unread
-    // Note: This logic assumes simple ID comparison. 
-    // Ideally we track 'last known max ID'.
-
+  
     if (newNotifications.length > previousCount) {
-      const latestInfo = newNotifications[0]; // Assuming sorted by desc created
-      // Check if it's unread and recent enough or just rely on 'isRead'
+      const latestInfo = newNotifications[0]; 
       if (!latestInfo.isRead && !this.notifications.some(n => n.id === latestInfo.id)) {
         this.snackBar.open(latestInfo.message, 'Close', {
           duration: 5000,
@@ -113,8 +109,6 @@ export class Dashboard implements OnInit, OnDestroy {
     this.userService.getNotifications(this.currentUser.id).subscribe({
       next: (response) => {
         if (response.success && response.data) {
-          // Wrap in setTimeout to avoid ExpressionChangedAfterItHasBeenCheckedError
-          // if the response arrives synchronously or too fast during initialization.
           setTimeout(() => {
             this.notifications = response.data || [];
             this.updateUnreadCount();

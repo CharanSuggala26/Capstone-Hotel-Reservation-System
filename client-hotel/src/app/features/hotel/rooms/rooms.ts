@@ -64,7 +64,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private destroy$ = new Subject<void>();
 
-  // Filters
+  
   filterType: number | null = null;
   filterStatus: number | null = null;
   filterPriceMin: number | null = null;
@@ -89,45 +89,40 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // Custom filter predicate
+
     this.dataSource.filterPredicate = (data: RoomDto, filter: string) => {
-      // Logic combines specific filters
+
       const matchType = this.filterType === null || data.type === this.filterType;
       const matchStatus = this.filterStatus === null || data.status === this.filterStatus;
       const matchMin = this.filterPriceMin === null || data.basePrice >= this.filterPriceMin;
       const matchMax = this.filterPriceMax === null || data.basePrice <= this.filterPriceMax;
 
-      // General string search if entered (optional, can keep separate)
-      // filter string handles the "general" search if we had one, but we are replacing with dropdowns.
-      // If we want to keep the text search too:
-      // const searchStr = filter.toLowerCase();
-      // const matchText = data.roomNumber.toLowerCase().includes(searchStr); 
+
 
       return matchType && matchStatus && matchMin && matchMax;
     };
 
-    // ... existing init code ...
-    // route param override
+ 
     const idParam = this.route.snapshot.paramMap.get('id');
     this.hotelIdFromRoute = idParam ? Number(idParam) : null;
     if (this.hotelIdFromRoute) {
       this.roomForm.patchValue({ hotelId: this.hotelIdFromRoute });
     }
 
-    // react to user/roles and load hotels (for selector)
+    
     this.auth.currentUser$
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => {
         this.isAdmin = this.auth.hasRole('Admin');
         this.isManager = this.auth.hasRole('HotelManager');
 
-        // auto-assign manager's hotel if user payload contains it and no route override
+       
         if (this.isManager && (user as any)?.hotelId && !this.hotelIdFromRoute) {
           this.hotelIdFromRoute = (user as any).hotelId;
           this.roomForm.patchValue({ hotelId: this.hotelIdFromRoute });
         }
 
-        // If Admin or Manager, load hotels for selector (allow switching)
+       
         if (this.isAdmin || this.isManager) {
           this.hotelService.getHotels()
             .pipe(takeUntil(this.destroy$))
@@ -135,15 +130,14 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
               const items = (res && res.data) || (Array.isArray(res) ? res : []);
               setTimeout(() => {
                 this.hotels = items;
-                // If there is no hotelId yet but hotels list exists, optionally set default
+                
                 if (!this.roomForm.value.hotelId && this.hotels.length === 1) {
                   this.roomForm.patchValue({ hotelId: this.hotels[0].id });
                 }
               });
-              this.reload(); // Reload happens independently of UI list update
+              this.reload(); 
             });
         } else {
-          // Non-admin/non-manager: just load all rooms or based on route param
           this.reload();
         }
       });
@@ -155,11 +149,8 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  // Trigger filtering
+  
   applyCustomFilter(): void {
-    // We toggle the filter string just to trigger the predicate. 
-    // The value doesn't matter much if we use the class properties in predicate directly, 
-    // but Angular Material Table expects a filter string change to re-run.
     this.dataSource.filter = '' + Math.random();
   }
 
@@ -171,9 +162,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.applyCustomFilter();
   }
 
-  // Previous applyFilter() removed as we replaced it
 
-  // ... rest of methods ...
 
   loadAllRooms(): void {
     this.hotelService.getRooms().pipe(takeUntil(this.destroy$)).subscribe(res => {
@@ -181,7 +170,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.dataSource.data = items;
     });
   }
-  // ... and so on ...
+
 
   loadRoomsByHotel(hotelId: number): void {
     this.hotelService.getRoomsByHotel(hotelId).pipe(takeUntil(this.destroy$)).subscribe(res => {
@@ -275,7 +264,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
-  // <-- NEW: called from template selectionChange()
+  
   onHotelSelectionChange(): void {
     this.reload();
   }
@@ -297,7 +286,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     return this.roomStatuses.find(x => x.value === s)?.label ?? String(s);
   }
 
-  // ... inside RoomsComponent ...
+ 
 
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;

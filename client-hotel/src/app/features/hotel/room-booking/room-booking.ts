@@ -64,14 +64,14 @@ export class RoomBookingComponent implements OnInit {
       checkOutDate: ['', Validators.required],
       numberOfGuests: [1, [Validators.required, Validators.min(1)]],
       selectedRoomId: ['', Validators.required],
-      guestEmail: [''] // Optional, for Staff only
+      guestEmail: [''] 
     });
 
     this.guestForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['Guest123!', Validators.required], // Default password for guests
+      password: ['Guest123!', Validators.required],
       phoneNumber: ['']
     });
   }
@@ -88,7 +88,7 @@ export class RoomBookingComponent implements OnInit {
     this.hotelId = +this.route.snapshot.params['id'];
   }
 
-  /** Format date to backend-compatible string: YYYY-MM-DDTHH:mm:ssZ */
+  
   private formatDateToApiDate(value: any, isCheckIn: boolean): string {
     const d = value instanceof Date ? value : new Date(value);
     const year = d.getUTCFullYear();
@@ -125,7 +125,6 @@ export class RoomBookingComponent implements OnInit {
     console.debug('Availability URL:', url);
 
     this.loading = true;
-    // Safety timer to avoid infinite spinner
     const loadingTimer = setTimeout(() => {
       if (this.loading) {
         console.warn('Availability request timed out (15s), hiding spinner as fallback.');
@@ -141,7 +140,6 @@ export class RoomBookingComponent implements OnInit {
     ).subscribe((response: any) => {
       clearTimeout(loadingTimer);
 
-      // Normalize response to array (supports raw array or ApiResponse { data: [...] })
       let rooms: RoomDto[] = [];
       if (Array.isArray(response)) {
         rooms = response;
@@ -161,7 +159,6 @@ export class RoomBookingComponent implements OnInit {
         return;
       }
 
-      // No rooms from server → fallback to client-side availability
       console.debug('Server returned no rooms; invoking client-side fallback');
       this.tryClientSideAvailability(new Date(rawCheckIn), new Date(rawCheckOut));
     }, (err) => {
@@ -245,13 +242,11 @@ export class RoomBookingComponent implements OnInit {
         this.loading = false;
         this.cdr.detectChanges();
 
-        // Normalize: support ApiResponse or raw reservation object
         const _possibleReservation = (response?.success === true && response?.data) ? response.data : ((response && typeof response === 'object' && 'id' in response) ? response : null);
         if (_possibleReservation) {
           const reservation = _possibleReservation;
           const reservationId = reservation.id;
 
-          // Booking successful
           const msg = 'Booking request sent! Status: Booked. Please wait for hotel confirmation.';
           this.snackBar.open(msg, 'View Reservations', { duration: 5000 })
             .onAction().subscribe(() => this.router.navigate(['/dashboard/reservations']));
@@ -284,7 +279,6 @@ export class RoomBookingComponent implements OnInit {
     }
   }
 
-  // Guest Registration Helpers
   showRegisterGuest = false;
   guestForm: FormGroup;
 

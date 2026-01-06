@@ -29,22 +29,18 @@ mat-card-title {
     margin-bottom: 0 !important;
 }
 
-/* Header Actions (Add Button) within the card header?
-   Typically mat-card-title is text. We can put specific buttons in an absolute position or flex row. 
-   But the HTML structure needs to change to put the button inside the header or nearby.
-   The current HTML has a separate button. We will move it. */
+
 
 .header-actions {
     display: flex;
     margin-left: auto;
-    /* Push to right */
 }
 
 mat-card-content {
     padding: 0 !important;
 }
 
-/* Table Styling */
+
 table.mat-table {
     width: 100%;
     border-collapse: separate;
@@ -79,7 +75,7 @@ table.mat-table {
     border-bottom: none;
 }
 
-/* Actions */
+
 .mat-column-actions {
     width: 150px;
     text-align: right;

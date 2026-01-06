@@ -7,7 +7,6 @@
     <mat-card-content>
       <form [formGroup]="bookingForm">
 
-        <!-- SEARCH SECTION -->
         <div class="search-section">
           <h3>Search Available Rooms</h3>
           <div class="form-row">
@@ -30,7 +29,6 @@
               <input matInput type="number" formControlName="numberOfGuests">
             </mat-form-field>
 
-            <!-- STAFF ONLY: Walk-in / Guest Email -->
             <mat-form-field appearance="outline" *ngIf="isStaff" class="guest-email-field">
               <mat-label>Guest Email (Walk-in)</mat-label>
               <input matInput formControlName="guestEmail" placeholder="user@example.com">
@@ -45,14 +43,12 @@
               Search Rooms
             </button>
 
-            <!-- New Guest Registration Trigger (Staff) -->
             <button *ngIf="isStaff" mat-stroked-button color="accent" type="button" (click)="toggleRegisterGuest()">
               <mat-icon>person_add</mat-icon>
               {{ showRegisterGuest ? 'Cancel Registration' : 'Register New Guest' }}
             </button>
           </div>
 
-          <!-- Quick Guest Registration Form -->
           <div *ngIf="showRegisterGuest" class="guest-registration-panel">
             <h4>Quick Guest Registration</h4>
             <div [formGroup]="guestForm" class="guest-form-grid">
@@ -84,13 +80,11 @@
           </div>
         </div>
 
-        <!-- LOADING -->
         <div *ngIf="loading" class="loading-container">
           <mat-spinner></mat-spinner>
           <p>Searching available rooms...</p>
         </div>
 
-        <!-- AVAILABLE ROOMS -->
         <div *ngIf="!loading && availableRooms.length > 0" class="rooms-section">
           <h3>Available Rooms</h3>
           <mat-radio-group formControlName="selectedRoomId" class="rooms-grid">
@@ -115,7 +109,6 @@
           </div>
         </div>
 
-        <!-- NO ROOMS -->
         <div *ngIf="!loading && availableRooms.length === 0 && bookingForm.value.checkInDate">
           <mat-icon>hotel</mat-icon>
           <p>No rooms available for selected dates.</p>

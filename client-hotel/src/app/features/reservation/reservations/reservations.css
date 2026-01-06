@@ -77,50 +77,45 @@ mat-card-content {
   border-bottom: none;
 }
 
-/* Chips */
+
 .mat-mdc-chip {
   min-height: 24px !important;
   font-size: 0.8rem !important;
   font-weight: 500;
 }
 
-/* Status Colors */
+
 .status-booked {
   background-color: #e3f2fd !important;
   color: #1565c0 !important;
-  /* Blue */
   border: 1px solid #bbdefb !important;
 }
 
 .status-confirmed {
   background-color: #e8f5e9 !important;
   color: #2e7d32 !important;
-  /* Green */
   border: 1px solid #c8e6c9 !important;
 }
 
 .status-checkedin {
   background-color: #f3e5f5 !important;
   color: #7b1fa2 !important;
-  /* Purple */
   border: 1px solid #e1bee7 !important;
 }
 
 .status-checkedout {
   background-color: #fff3e0 !important;
   color: #e65100 !important;
-  /* Orange */
   border: 1px solid #ffe0b2 !important;
 }
 
 .status-cancelled {
   background-color: #ffebee !important;
   color: #c62828 !important;
-  /* Red */
   border: 1px solid #ffcdd2 !important;
 }
 
-/* Buttons */
+
 .mat-column-actions {
   min-width: 150px;
   text-align: right;
@@ -139,7 +134,7 @@ mat-cell button:last-child {
   margin-right: 0;
 }
 
-/* No Data State */
+
 .no-data {
   display: flex;
   flex-direction: column;

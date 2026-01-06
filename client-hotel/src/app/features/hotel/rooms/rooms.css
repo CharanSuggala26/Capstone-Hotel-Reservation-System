@@ -1,6 +1,5 @@
 .rooms-container {
   max-width: 1400px;
-  /* Wider for rooms table */
   width: 95%;
   margin: 2rem auto;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
@@ -16,7 +15,7 @@ h2 {
   border-left: 4px solid #1976d2;
 }
 
-/* Hotel Selector Area */
+
 .hotel-selector {
   background: white;
   padding: 1.5rem;
@@ -32,7 +31,7 @@ h2 {
   max-width: 400px;
 }
 
-/* Filter Panel Styling */
+
 .filter-panel {
   background: white;
   padding: 1.5rem;
@@ -52,10 +51,9 @@ h2 {
 
 .filter-panel button {
   height: 56px;
-  /* Match form field height */
 }
 
-/* Room Form Layout (Add/Edit) */
+
 .room-form {
   background: #f8f9fa;
   padding: 2rem;
@@ -80,7 +78,7 @@ h2 {
   padding-top: 1.5rem;
 }
 
-/* Material Table Styling */
+
 mat-table {
   background: white;
   border-radius: 12px;
@@ -90,7 +88,6 @@ mat-table {
 
 mat-header-row {
   background-color: #1976d2;
-  /* Primary Header */
   min-height: 56px;
 }
 
@@ -107,7 +104,6 @@ mat-cell {
   font-size: 0.95rem;
 }
 
-/* Hover effect for Table Rows */
 mat-row {
   transition: background-color 0.2s;
   border-bottom: 1px solid #f0f0f0;
@@ -115,17 +111,16 @@ mat-row {
 
 mat-row:hover {
   background-color: #f1f8e9;
-  /* Light Green Tint on Hover */
 }
 
-/* Action Buttons within Table */
+
 .mat-column-actions {
   display: flex;
   justify-content: flex-end;
   padding-right: 16px;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .form-row {
     grid-template-columns: 1fr 1fr;

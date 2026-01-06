@@ -41,7 +41,7 @@ export class HotelAdminListComponent implements OnInit, AfterViewInit {
         this.hotelService.getHotels().subscribe((response: any) => {
             const hotels = Array.isArray(response) ? response : (response.data || []);
             this.dataSource.data = hotels;
-            this.cdr.detectChanges(); // Force detection to resolve NG0100
+            this.cdr.detectChanges(); 
         });
     }
 

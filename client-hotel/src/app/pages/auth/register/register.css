@@ -63,7 +63,6 @@
   text-decoration: underline;
 }
 
-/* Ensure mat-form-fields take up space properly */
 mat-form-field {
   width: 100%;
 }

@@ -73,7 +73,7 @@ export class SeasonalRatesComponent implements OnInit {
                 const items = (res && res.data) || (Array.isArray(res) ? res : []);
                 this.hotels = items;
 
-                // If manager has only one hotel, auto-select
+                // If manager has only one hotel it will auto-selects the hotel
                 if (this.hotels.length === 1) {
                     this.hotelControl.setValue(this.hotels[0].id);
                     this.onHotelChange();
@@ -109,7 +109,6 @@ export class SeasonalRatesComponent implements OnInit {
     addRate(): void {
         if (this.rateForm.invalid || !this.selectedHotelId) return;
 
-        // Format dates to ISO
         const val = this.rateForm.value;
         const dto = {
             name: val.name,

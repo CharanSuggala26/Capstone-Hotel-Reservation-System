@@ -74,7 +74,7 @@ button[mat-raised-button] {
     padding: 0.5rem 2rem;
 }
 
-/* Rates List */
+
 h3 {
     color: #37474f;
     font-weight: 500;
@@ -101,13 +101,13 @@ mat-cell {
     font-size: 0.95rem;
 }
 
-/* Actions */
+
 mat-header-cell:last-child,
 mat-cell:last-child {
     justify-content: flex-end;
 }
 
-/* No Data & Hint */
+
 .no-data,
 .hint {
     text-align: center;

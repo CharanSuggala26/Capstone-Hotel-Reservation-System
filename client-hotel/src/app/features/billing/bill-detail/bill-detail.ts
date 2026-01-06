@@ -56,7 +56,7 @@ export class BillDetailComponent implements OnInit {
           this.bill = undefined;
         }
 
-        // Normalize paymentStatus if server returns string or omits it
+        // Normalizing the bill paymentStatus 
         if (this.bill) {
           if (typeof (this.bill as any).paymentStatus === 'string') {
             const ps = (PaymentStatus as any)[(this.bill as any).paymentStatus];
@@ -83,7 +83,7 @@ export class BillDetailComponent implements OnInit {
     this.loading = true;
     this.reservationService.processPayment(this.bill.id, this.bill.totalAmount).subscribe({
       next: () => {
-        // Refresh bill
+        // Refreshing the bill
         this.loadBill(this.bill!.id);
         this.snackBar.open('Payment successful', 'OK', { duration: 3000 });
       },
@@ -101,7 +101,6 @@ export class BillDetailComponent implements OnInit {
   }
 
   cancel(): void {
-    // For this app, 'cancel' means the user chose not to pay now – leave bill as Pending and return to list
     this.router.navigate(['/dashboard/bills']);
   }
 

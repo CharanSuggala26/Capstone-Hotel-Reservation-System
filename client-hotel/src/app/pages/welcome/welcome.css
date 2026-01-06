@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-/* Navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@
     box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
 }
 
-/* Hero Section */
+
 .hero {
     display: flex;
     align-items: center;
@@ -139,7 +139,7 @@
     background: #f8f9fa;
 }
 
-/* Hero Visual */
+
 .hero-visual {
     flex: 1;
     position: relative;
@@ -201,7 +201,7 @@
     }
 }
 
-/* Features */
+
 .features {
     display: flex;
     justify-content: center;
@@ -246,7 +246,7 @@
     background: white;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;

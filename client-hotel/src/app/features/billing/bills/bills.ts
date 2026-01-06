@@ -49,11 +49,11 @@ export class BillsComponent implements OnInit {
     this.reservationService.getBills().subscribe({
       next: (response: any) => {
         this.loading = false;
-        // Handle if backend returns array directly
+        
         if (Array.isArray(response)) {
           this.dataSource.data = response;
         }
-        // Handle if backend returns ApiResponse format
+        
         else if (response && response.success && response.data) {
           this.dataSource.data = response.data;
         }
@@ -61,7 +61,7 @@ export class BillsComponent implements OnInit {
           this.dataSource.data = [];
         }
 
-        // Normalize paymentStatus (server may return string or missing value)
+       
         this.dataSource.data = this.dataSource.data.map(b => ({
           ...b,
           paymentStatus: typeof b.paymentStatus === 'string' ? (PaymentStatus as any)[b.paymentStatus] ?? b.paymentStatus : (b.paymentStatus ?? PaymentStatus.Pending)
@@ -110,7 +110,6 @@ export class BillsComponent implements OnInit {
   }
 
   goToBill(billId: number): void {
-    // Navigate to bill detail page where user can pay or cancel
     this.router.navigate(['/dashboard/bills', billId]);
   }
 }

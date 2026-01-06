@@ -61,7 +61,7 @@ export class Reports implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.fetchData();
 
-    // Refresh data every 3 seconds if in browser
+    // Refreshing data for every 3 secondshis
     if (this.isBrowser) {
       this.refreshSubscription = interval(3000).subscribe(() => {
         this.fetchData(true);
@@ -91,7 +91,7 @@ export class Reports implements OnInit, OnDestroy {
         if (!isBackground) {
           this.loading = false;
         }
-        this.cdr.detectChanges(); // Manually force UI update
+        this.cdr.detectChanges(); 
       })
     ).subscribe((res: any) => {
       this.processData(res);
@@ -104,7 +104,7 @@ export class Reports implements OnInit, OnDestroy {
     let bills = res.bills?.data || res.bills || [];
     const userResult = res.users?.data || res.users;
 
-    // Filter data for Hotel Manager
+    // Filtering data for Hotel Manager (i.e for Hotel Manager Portal Stats)
     if (this.authService.hasRole('HotelManager')) {
       const hotelId = this.authService.getCurrentUser()?.hotelId;
       if (hotelId) {
@@ -114,7 +114,7 @@ export class Reports implements OnInit, OnDestroy {
         const reservationIds = new Set(reservations.map((r: any) => r.id));
         bills = bills.filter((b: any) => reservationIds.has(b.reservationId));
       } else {
-        // If Hotel Manager has no hotel assigned, show nothing
+        // If Hotel Manager has no hotel assigned then i'll show nothing
         hotels = [];
         reservations = [];
         bills = [];
@@ -123,7 +123,7 @@ export class Reports implements OnInit, OnDestroy {
 
     this.stats.totalHotels = hotels.length;
 
-    // Calculate Revenue based on Bookings (Projected/Booked Revenue) to show immediate stats
+    // Calculating Revenue based on Bookings and Payments to show immediate stats
     const validReservations = reservations.filter((r: any) =>
       r.status !== ReservationStatus.Cancelled && r.status !== 5
     );
@@ -136,7 +136,7 @@ export class Reports implements OnInit, OnDestroy {
       r.status === ReservationStatus.CheckedIn || r.status === 3
     ).length;
 
-    // Calculate Occupancy based on date overlap and active status (Booked, Confirmed, CheckedIn)
+    // Calculating Occupancy based on date overlap and active status (Booked, Confirmed, CheckedIn)
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -151,11 +151,11 @@ export class Reports implements OnInit, OnDestroy {
 
       const checkIn = new Date(r.checkInDate);
       const checkOut = new Date(r.checkOutDate);
-      // Normalize dates to compare only days
+      // Normalizing the dates to compare only days
       checkIn.setHours(0, 0, 0, 0);
       checkOut.setHours(0, 0, 0, 0);
 
-      // Occupied if today is within [checkIn, checkOut)
+      // Occupied if today is within [checkIn, checkOut]
       return today >= checkIn && today < checkOut;
     }).length;
 
@@ -168,7 +168,7 @@ export class Reports implements OnInit, OnDestroy {
       this.stats.totalUsers = userResult?.totalCount || 0;
     }
 
-    // Calculate last 6 months dynamically
+    
     const last6Months = [];
     const revenueByMonth = new Array(6).fill(0);
 
@@ -177,13 +177,12 @@ export class Reports implements OnInit, OnDestroy {
       last6Months.push(d.toLocaleString('default', { month: 'short' }));
     }
 
-    // Process Revenue per Month using CheckInDate (Projected Activity)
+    // Processing Revenue per Month using CheckInDate (Projected Activity)
     validReservations.forEach((r: any) => {
       const checkIn = new Date(r.checkInDate);
       const diffMonths = (today.getFullYear() - checkIn.getFullYear()) * 12 + (today.getMonth() - checkIn.getMonth());
 
       if (diffMonths >= 0 && diffMonths < 6) {
-        // index 0 = 5 months ago, index 5 = current month
         const index = 5 - diffMonths;
         revenueByMonth[index] += (r.totalAmount || 0);
       }
@@ -213,7 +212,6 @@ export class Reports implements OnInit, OnDestroy {
       }]
     };
 
-    // Explicitly update chart
     this.chart?.update();
   }
 }

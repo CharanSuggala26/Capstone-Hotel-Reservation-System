@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../models'; // Ensure ApiResponse is exported or redefine
+import { ApiResponse } from '../models'; 
 
 export interface SeasonalRateDto {
     id: number;

@@ -12,7 +12,6 @@
     </mat-form-field>
   </div>
 
-  <!-- Advanced Filters -->
   <div class="filter-panel">
     <mat-form-field appearance="outline">
       <mat-label>Room Type</mat-label>
@@ -43,7 +42,7 @@
     <button mat-button (click)="clearFilters()">Clear</button>
   </div>
 
-  <!-- Form only for Admin / Manager -->
+  <!-- only for Admin / Manager -->
   <form *ngIf="isAdmin || isManager" [formGroup]="roomForm" (ngSubmit)="save()" class="room-form">
     <input formControlName="id" type="hidden" />
     <div class="form-row">
@@ -117,13 +116,11 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let r">
-        <!-- Edit/Delete: Staff Only -->
+        <!-- Edit/Delete Staff Only -->
         <button *ngIf="isAdmin || isManager" mat-icon-button color="primary"
           (click)="startEdit(r)"><mat-icon>edit</mat-icon></button>
         <button *ngIf="isAdmin || isManager" mat-icon-button color="warn"
           (click)="deleteRoom(r.id)"><mat-icon>delete</mat-icon></button>
-
-        <!-- Book: Everyone (Available or Occupied, future booking allowed) -->
         <a *ngIf="r.status != 2" mat-raised-button color="accent"
           [routerLink]="['/dashboard/hotels', r.hotelId, 'book']" style="margin-left: 8px;">
           Book

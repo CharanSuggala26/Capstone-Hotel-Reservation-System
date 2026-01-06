@@ -19,7 +19,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <!-- "Pay" button hidden for Staff (Admin/Receptionist/HotelManager) -->
+      <!-- "Pay" button is hidden for Staff (Admin/Receptionist/HotelManager) -->
       <button mat-raised-button color="primary" (click)="pay()"
         *ngIf="bill.paymentStatus === PaymentStatus.Pending && !hasRole('Admin') && !hasRole('Receptionist') && !hasRole('HotelManager')">
         <mat-icon>payment</mat-icon>

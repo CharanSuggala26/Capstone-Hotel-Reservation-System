@@ -8,12 +8,12 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const platformId = inject(PLATFORM_ID);
 
-  // On server-side, allow the route (will be checked again on client)
+  // On server-side, allowing the route (will be checked again on client)
   if (!isPlatformBrowser(platformId)) {
     return true;
   }
 
-  // On client-side, check authentication
+  // On client-side, checking authentication
   if (authService.isAuthenticated()) {
     return true;
   }
@@ -28,12 +28,12 @@ export const roleGuard = (requiredRole: string): CanActivateFn => {
     const router = inject(Router);
     const platformId = inject(PLATFORM_ID);
 
-    // On server-side, allow the route (will be checked again on client)
+    // On server-side, allowing the route (will be checked again on client)
     if (!isPlatformBrowser(platformId)) {
       return true;
     }
 
-    // On client-side, check authentication and role
+    // On client-side, checking authentication and role
     if (authService.isAuthenticated() && authService.hasRole(requiredRole)) {
       return true;
     }

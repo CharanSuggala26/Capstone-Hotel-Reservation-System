@@ -43,9 +43,7 @@ export class AuthService {
       }));
   }
 
-  /**
-   * Registers a new user without logging them in (for Staff creating guests).
-   */
+ // Receptionist can register a new user (using in Walk-in Bookings)
   registerGuest(userData: RegisterRequest): Observable<AuthResponseDto> {
     return this.http.post<AuthResponseDto>(`${this.apiUrl}/register`, userData);
   }
@@ -94,10 +92,10 @@ export class AuthService {
         console.log('✅ User loaded successfully:', user.email, 'Roles:', user.roles);
         this.currentUserSubject.next(user);
       } else {
-        console.log('❌ No valid user/token found');
+        console.log('No valid user/token found');
       }
     } else {
-      console.log('🖥️ Running on server, skipping user load');
+      console.log('Running on server, skipping user load');
     }
   }
 }

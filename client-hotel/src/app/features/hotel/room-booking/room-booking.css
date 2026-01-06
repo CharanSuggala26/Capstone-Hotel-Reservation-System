@@ -121,13 +121,10 @@
 
 .guest-email-field {
   grid-column: 1 / -1;
-  /* Make it full width in the grid */
   background-color: #f1f8ff;
-  /* Light blue background to distinct it as Staff feature */
   border-radius: 4px;
 }
 
-/* Guest Registration Panel */
 .guest-registration-panel {
   margin-top: 1rem;
   padding: 1.5rem;

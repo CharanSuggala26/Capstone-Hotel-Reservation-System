@@ -29,13 +29,13 @@ mat-card-content {
   padding: 2.5rem !important;
 }
 
-/* Form Fields */
+
 .full-width {
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
-/* Warnings & Errors */
+
 .warning-text {
   color: #ff9800 !important;
   font-weight: 500;
@@ -55,7 +55,7 @@ mat-card-content {
   font-weight: 500;
 }
 
-/* Actions */
+
 .actions {
   display: flex;
   justify-content: flex-end;

@@ -59,7 +59,6 @@ export class UserService {
   //   return this.http.post<ApiResponse<void>>(`${this.apiUrl}/${userId}/promote`, { roles });
   // }
   promoteUser(userId: string, roles: string[]): Observable<ApiResponse<void>> {
-    // The backend expects an object that matches UpdateUserRoleDto
     const payload = {
       userId: userId,
       roles: roles

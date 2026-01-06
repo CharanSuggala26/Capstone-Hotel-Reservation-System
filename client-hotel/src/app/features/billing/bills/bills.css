@@ -1,4 +1,4 @@
-/* Existing CSS content */
+
 .bills-container {
   max-width: 1200px;
   width: 95%;
@@ -30,7 +30,7 @@ mat-card-content {
   padding: 0 !important;
 }
 
-/* Loading State */
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ mat-card-content {
   margin-bottom: 1.5rem;
 }
 
-/* Table Styling */
+
 .bills-table {
   width: 100%;
   border-collapse: separate;
@@ -78,7 +78,7 @@ mat-card-content {
   border-bottom: none;
 }
 
-/* Specific Columns */
+
 .mat-column-id {
   font-weight: 500;
   color: #3f51b5;
@@ -88,40 +88,36 @@ mat-card-content {
 .mat-column-totalAmount {
   font-weight: 700;
   color: #2e7d32;
-  /* Green shade for money */
+ 
 }
 
-/* Chips */
+
 .mat-mdc-chip {
   min-height: 24px !important;
   font-size: 0.8rem !important;
   font-weight: 500;
 }
 
-/* Custom Status Colors */
+
 .status-paid {
   background-color: #e8f5e9 !important;
   color: #2e7d32 !important;
-  /* Green text */
   border: 1px solid #c8e6c9 !important;
 }
 
 .status-pending {
   background-color: #ffebee !important;
   color: #c62828 !important;
-  /* Red text */
   border: 1px solid #ffcdd2 !important;
 }
 
 .status-refunded {
   background-color: #fff3e0 !important;
   color: #ef6c00 !important;
-  /* Orange text */
   border: 1px solid #ffe0b2 !important;
 }
 
 
-/* Buttons */
 .mat-column-actions {
   width: 140px;
   text-align: right;
@@ -135,7 +131,7 @@ button[mat-raised-button] {
   letter-spacing: 0.5px;
 }
 
-/* No Data State */
+
 .no-data {
   display: flex;
   flex-direction: column;

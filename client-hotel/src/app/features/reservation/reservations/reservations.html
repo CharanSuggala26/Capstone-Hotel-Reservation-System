@@ -62,14 +62,14 @@
           <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef>Actions</th>
             <td mat-cell *matCellDef="let reservation">
-              <!-- Hotel Manager: Confirm Booking -->
+              <!-- Confirm Booking Manager & Guest -->
               <button *ngIf="canConfirm(reservation)" mat-raised-button color="primary"
                 (click)="confirmReservation(reservation.id)">
                 <mat-icon>check_circle</mat-icon>
                 Confirm
               </button>
 
-              <!-- Cancel Booking (Manager & Guest) -->
+              <!-- Cancel Booking Manager & Guest -->
               <button *ngIf="canCancel(reservation)" mat-raised-button color="warn"
                 (click)="cancelReservation(reservation.id)" style="margin-left: 8px;">
                 <mat-icon>cancel</mat-icon>
