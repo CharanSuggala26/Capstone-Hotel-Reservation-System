@@ -69,29 +69,48 @@ public class SeasonalRateService : ISeasonalRateService
     public async Task<decimal> CalculateDynamicPriceAsync(int roomId, DateTime checkIn, DateTime checkOut, decimal basePrice)
     {
         var room = await _context.Rooms.FindAsync(roomId);
-        if (room == null) return basePrice * (decimal)(checkOut - checkIn).TotalDays;
+        // Fallback or invalid duration
+        var days = (decimal)(checkOut - checkIn).TotalDays;
+        if (days < 1) days = 1;
+        
+        if (room == null) return basePrice * days;
 
         var hotelId = room.HotelId;
 
+        // Force check-in/out to purely date (midnight)
+        var current = checkIn.Date;
+        var end = checkOut.Date;
+        
+        // Handle edge case where same-day booking implies 1 night
+        if (end <= current) end = current.AddDays(1);
+
+        // Fetch ONLY rates that overlap with the requested period
+        // Rate Start < Booking End AND Rate End >= Booking Start (general overlap)
+        // Note: Booking ends at 'end', so rate must start strictly before 'end'.
         var rates = await _context.SeasonalRates
-            .Where(s => s.HotelId == hotelId)
+            .Where(s => s.HotelId == hotelId && s.StartDate < end && s.EndDate >= current)
             .ToListAsync();
 
         decimal totalPrice = 0;
         
-        for (var date = checkIn; date < checkOut; date = date.AddDays(1))
+        while (current < end)
         {
-            // pricing also based on checkin,checkout
-            var activeRates = rates.Where(r => date >= r.StartDate && date <= r.EndDate).ToList();
+            // Calculate effective price for THIS specific day/night 'current'
+            var activeRates = rates.Where(r => 
+                current >= r.StartDate.Date && 
+                current <= r.EndDate.Date
+            ).ToList();
             
             decimal multiplier = 1.0m;
             if (activeRates.Any())
             {
-             //used from seasonal pricing - Admin, Manager can set multiplier
+                // used from seasonal pricing - Admin, Manager can set multiplier
+                // Takes the highest multiplier if multiple overlapping rules exist (e.g. holiday + weekend)
                 multiplier = activeRates.Max(r => r.Multiplier);
             }
             
             totalPrice += basePrice * multiplier;
+            current = current.AddDays(1);
         }
 
         return totalPrice;

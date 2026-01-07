@@ -8,10 +8,12 @@ namespace HotelWebApi.Services;
 public class RoomService : IRoomService
 {
     private readonly HotelDbContext _context;
+    private readonly ISeasonalRateService _rateService;
 
-    public RoomService(HotelDbContext context)
+    public RoomService(HotelDbContext context, ISeasonalRateService rateService)
     {
         _context = context;
+        _rateService = rateService;
     }
 
     public async Task<IEnumerable<RoomDto>> GetAllRoomsAsync()
@@ -165,19 +167,32 @@ public class RoomService : IRoomService
             )
         );
 
-        return await roomsQuery
-            .Select(r => new RoomDto
+        var roomList = await roomsQuery.ToListAsync();
+        var dtos = new List<RoomDto>();
+
+        foreach (var r in roomList)
+        {
+            var totalAmount = await _rateService.CalculateDynamicPriceAsync(r.Id, checkIn, checkOut, r.BasePrice);
+            var nights = (checkOut - checkIn).Days;
+            if (nights < 1) nights = 1;
+            
+            // Calculate effective average daily rate for display purposes
+            var avgDailyRate = totalAmount / nights;
+
+            dtos.Add(new RoomDto
             {
                 Id = r.Id,
                 RoomNumber = r.RoomNumber,
                 Type = r.Type,
-                BasePrice = r.BasePrice,
+                BasePrice = avgDailyRate, // Show the effective rate instead of static BasePrice
                 Capacity = r.Capacity,
                 Status = r.Status,
                 HotelId = r.HotelId,
                 HotelName = r.Hotel.Name
-            })
-            .ToListAsync();
+            });
+        }
+
+        return dtos;
     }
     public async Task<IEnumerable<RoomDto>> GetRecommendedRoomsAsync(string userId)
     {

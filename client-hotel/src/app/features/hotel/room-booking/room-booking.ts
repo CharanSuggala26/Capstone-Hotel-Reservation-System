@@ -84,8 +84,16 @@ export class RoomBookingComponent implements OnInit {
     return this.hasRole('Admin') || this.hasRole('Receptionist') || this.hasRole('HotelManager');
   }
 
+  private _searchDisabled = true;
+
   ngOnInit(): void {
     this.hotelId = +this.route.snapshot.params['id'];
+
+    this._searchDisabled = this.calculateSearchDisabled();
+
+    this.bookingForm.valueChanges.subscribe(() => {
+      this._searchDisabled = this.calculateSearchDisabled();
+    });
   }
 
 
@@ -99,11 +107,14 @@ export class RoomBookingComponent implements OnInit {
   }
 
   isSearchDisabled(): boolean {
+    return this._searchDisabled;
+  }
+
+  private calculateSearchDisabled(): boolean {
     const ci = this.bookingForm.get('checkInDate')?.value;
     const co = this.bookingForm.get('checkOutDate')?.value;
     if (!ci || !co || !this.hotelId) return true;
 
-    // For Receptionist, search is enabled only after providing a guest email (e.g. via registration)
     if (this.hasRole('Receptionist') && !this.bookingForm.get('guestEmail')?.value) {
       return true;
     }

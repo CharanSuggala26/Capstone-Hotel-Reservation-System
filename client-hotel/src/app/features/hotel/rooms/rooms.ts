@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
@@ -75,7 +75,8 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly hotelService: HotelService,
     private readonly auth: AuthService,
     private readonly route: ActivatedRoute,
-    private readonly snackBar: MatSnackBar
+    private readonly snackBar: MatSnackBar,
+    private readonly cdr: ChangeDetectorRef
   ) {
     this.roomForm = this.fb.group({
       id: [null],
@@ -144,6 +145,7 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
                 if (!this.roomForm.value.hotelId && this.hotels.length === 1) {
                   this.roomForm.patchValue({ hotelId: this.hotels[0].id });
                 }
+                this.cdr.detectChanges();
               });
               this.reload();
             });
@@ -210,8 +212,10 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const value = this.roomForm.value;
     if (this.editing && value.id) {
-      this.hotelService.updateRoom(value.id, value).subscribe((res: any) => {
-        if (res?.success) {
+      this.hotelService.updateRoom(value.id, value).subscribe({
+        next: (res: any) => {
+          // Backend returns the updated RoomDto, or standard OK.
+          // If we reach here, it's a success.
           this.snackBar.open('Room updated successfully', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -220,8 +224,11 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
           });
           this.reload();
           this.cancelEdit();
-        } else {
-          this.snackBar.open(res?.message || 'Failed updating room', 'Close', {
+        },
+        error: (err: any) => {
+          console.error('Update room error', err);
+          const msg = err?.error?.message || 'Failed updating room';
+          this.snackBar.open(msg, 'Close', {
             duration: 3000,
             verticalPosition: 'top',
             horizontalPosition: 'center',
@@ -230,8 +237,9 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
         }
       });
     } else {
-      this.hotelService.createRoom(value).subscribe((res: any) => {
-        if (res?.success) {
+      this.hotelService.createRoom(value).subscribe({
+        next: (res: any) => {
+          // Backend returns the created RoomDto
           this.snackBar.open('Room created successfully', 'Close', {
             duration: 3000,
             verticalPosition: 'top',
@@ -240,8 +248,11 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
           });
           this.reload();
           this.cancelEdit();
-        } else {
-          this.snackBar.open(res?.message || 'Failed creating room', 'Close', {
+        },
+        error: (err: any) => {
+          console.error('Create room error', err);
+          const msg = err?.error?.message || 'Failed creating room';
+          this.snackBar.open(msg, 'Close', {
             duration: 3000,
             verticalPosition: 'top',
             horizontalPosition: 'center',
@@ -253,9 +264,11 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   deleteRoom(id: number): void {
+    // confirm check removed as per user request
 
-    this.hotelService.deleteRoom(id).subscribe((res: any) => {
-      if (res?.success) {
+    this.hotelService.deleteRoom(id).subscribe({
+      next: () => {
+        // Backend returns 204 No Content
         this.snackBar.open('Room deleted successfully', 'Close', {
           duration: 3000,
           verticalPosition: 'top',
@@ -263,8 +276,11 @@ export class RoomsComponent implements OnInit, OnDestroy, AfterViewInit {
           panelClass: ['success-snackbar']
         });
         this.reload();
-      } else {
-        this.snackBar.open(res?.message || 'Failed deleting room', 'Close', {
+      },
+      error: (err: any) => {
+        console.error('Delete room error', err);
+        const msg = err?.error?.message || 'Failed deleting room';
+        this.snackBar.open(msg, 'Close', {
           duration: 3000,
           verticalPosition: 'top',
           horizontalPosition: 'center',

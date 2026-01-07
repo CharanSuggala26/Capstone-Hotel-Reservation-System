@@ -12,7 +12,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth';
 import { UserService } from '../../services/user';
 import { UserDto, NotificationDto } from '../../models';
-import { interval, Subscription, switchMap, filter } from 'rxjs';
+import { interval, Subscription, switchMap, filter, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -67,12 +68,23 @@ export class Dashboard implements OnInit, OnDestroy {
     // Poll every 30 seconds for Background service message notifictaions
     this.pollingSubscription = interval(30000).pipe(
       filter(() => !!this.currentUser),
-      switchMap(() => this.userService.getNotifications(this.currentUser!.id))
+      switchMap(() => this.userService.getNotifications(this.currentUser!.id).pipe(
+        catchError(err => {
+          // If backend is down, we don't want to crash the poller or spam too much
+          // We effectively swallow the error for this interval tick
+          return of({ success: false, data: [] });
+        })
+      ))
     ).subscribe({
-      next: (response) => {
-        if (response.success && response.data) {
+      next: (response: any) => {
+        if (response && response.success && response.data) {
           this.handleNewNotifications(response.data);
         }
+      },
+      error: (err) => {
+        // This should ideally not be reached due to catchError above, 
+        // but as a safety net if the interval itself fails
+        console.warn('Notification polling stream error', err);
       }
     });
   }
